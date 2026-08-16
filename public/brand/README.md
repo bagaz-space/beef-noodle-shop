@@ -10,7 +10,7 @@ Final logo/lock-up files from the designer go here once delivered:
 - `logo-ink.svg` — single-colour version
 
 Until real assets land, the hero uses `OutlineMark` (`components/OutlineMark.tsx`)
-— giant stroke-only 牛肉麵 over the hero photo — as the brand mark. That device
+— giant stroke-only 牛肉面馆 over the hero photo — as the brand mark. That device
 was chosen specifically so it doesn't need to change or be removed once a real
 logo exists: it lives on a different visual layer and won't collide with a
 lock-up placed in the header/footer.

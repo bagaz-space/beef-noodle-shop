@@ -32,7 +32,13 @@ export const CONTENT_STATUS = {
 
 export const brand = {
   name: "The Beef Noodle Shop",
-  chinese: "牛肉麵",
+  /**
+   * Simplified Chinese, matching the client's real logo lock-up (the
+   * "Opening this August" promo flyer) — not Traditional. See
+   * docs/01-brief.md and docs/02-desain.md: this reverses an earlier
+   * assumption made before any real client material existed.
+   */
+  chinese: "牛肉面馆",
   tagline: {
     en: "Good food, better mood.",
     zh: "好味道，好心情。",
@@ -167,23 +173,23 @@ export const menu: MenuSection[] = [
   {
     id: "beef-noodles",
     name: "Beef Noodles",
-    chinese: "牛肉麵",
+    chinese: "牛肉面",
     items: [
       {
         name: "Braised Beef Noodle Soup",
-        chinese: "紅燒牛肉麵",
+        chinese: "红烧牛肉面",
         description: "Australian beef shin, soup bone broth, hand-pulled noodles.",
         price: 24.9,
       },
       {
         name: "Clear Broth Beef Noodle",
-        chinese: "清燉牛肉麵",
+        chinese: "清炖牛肉面",
         description: "The lighter bowl. Same bone, longer simmer, less soy.",
         price: 24.9,
       },
       {
         name: "Beef Tendon Noodle",
-        chinese: "牛筋麵",
+        chinese: "牛筋面",
         description: "Tendon braised until it gives way completely.",
         price: 27.9,
       },
@@ -192,17 +198,17 @@ export const menu: MenuSection[] = [
   {
     id: "rice",
     name: "Rice",
-    chinese: "飯類",
+    chinese: "饭类",
     items: [
       {
         name: "Lu Rou Fan",
-        chinese: "滷肉飯",
+        chinese: "卤肉饭",
         description: "Braised minced pork over rice, soft egg.",
         price: 12.9,
       },
       {
         name: "Pork Chop Rice",
-        chinese: "排骨飯",
+        chinese: "排骨饭",
         description: "Marinated pork chop, pickled greens, rice.",
         price: 18.9,
       },
@@ -224,7 +230,7 @@ export const menu: MenuSection[] = [
   {
     id: "sweet",
     name: "Sweet & Drinks",
-    chinese: "甜品・飲料",
+    chinese: "甜品・饮料",
     items: [
       {
         name: "Shaved Ice",
@@ -234,7 +240,7 @@ export const menu: MenuSection[] = [
       },
       {
         name: "Plum Juice",
-        chinese: "酸梅湯",
+        chinese: "酸梅汤",
         description: "Sour, cold, cuts through the broth.",
         price: 7.9,
       },

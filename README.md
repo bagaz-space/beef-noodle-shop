@@ -1,6 +1,6 @@
 # The Beef Noodle Shop
 
-Situs untuk **The Beef Noodle Shop 牛肉麵**, restoran bakmi sapi Taiwan modern
+Situs untuk **The Beef Noodle Shop 牛肉面馆**, restoran bakmi sapi Taiwan modern
 di Paradigm Mall, Petaling Jaya, Malaysia.
 
 Desainnya ("Terang") diadaptasi dari repo perbandingan tiga-arah

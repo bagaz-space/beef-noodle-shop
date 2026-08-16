@@ -9,7 +9,7 @@ bagian yang mengikat keputusan desain web.
 
 | Field       | Isi                                                                       |
 | ----------- | ------------------------------------------------------------------------- |
-| Nama        | The Beef Noodle Shop · 牛肉麵                                              |
+| Nama        | The Beef Noodle Shop · 牛肉面馆                                            |
 | Kategori    | Restoran Taiwan modern — bakmi sapi, pork chop, lu rou fan, gua bao, shaved ice, plum juice |
 | Lokasi      | Paradigm Mall, Petaling Jaya, Malaysia                                    |
 | Format      | Dine-in 30 pax + takeaway + delivery (GrabFood, ShopeeFood, Foodpanda)     |
@@ -74,15 +74,23 @@ dibangun setelah tanggal itu — restonya sudah jalan. Jadi tugas situs ini buka
 membangun hype pra-buka, tapi **mengisi kursi weekday dan mendorong order
 delivery**.
 
-**2. 繁中 di Malaysia itu sinyal, bukan terjemahan.** Malaysia memakai Chinese
-**Simplified** secara resmi — sekolah dan koran Cina Malaysia semuanya Simplified.
-Traditional itu Taiwan. Jadi 牛肉麵 dan 好味道，好心情 di situs berfungsi sebagai
-**penanda keaslian Taiwan**, bukan supaya pembaca lokal bisa membacanya.
-Konsekuensinya: pakai 繁中 sebagai tipografi display/brand, **jangan bangun layer
-terjemahan penuh** (tanpa routing `/en` `/zh`, tanpa dictionary per bahasa).
-Ini keputusan yang secara sadar diambil dan dipertahankan — lihat
-`docs/02-desain.md` untuk alasan lengkapnya kalau ada yang mengusulkan
-sebaliknya lagi.
+**2. 中文 di sini aksen brand, bukan terjemahan — dan itu Simplified, bukan
+Traditional.** Draf awal dokumen ini menyimpulkan Traditional Chinese
+(繁中) sebagai "penanda keaslian Taiwan", karena brief sendiri tidak
+menyebut varian dan Malaysia resminya memakai Simplified. Itu asumsi, dibuat
+sebelum ada materi brand asli dari klien. Logo resmi di flyer promo klien
+("Opening this August") menulis **牛肉面馆** — Simplified, bukan
+Traditional (麵/館 → 面/馆) — dan begitu juga semua teks Cina lain di flyer
+itu. Situs ini sekarang mengikuti itu: Simplified Chinese, sesuai logo asli
+klien. Kebetulan ini juga otomatis cocok dengan Simplified yang dipakai
+resmi di Malaysia — jadi tidak ada lagi tegangan "sinyal Taiwan vs. bisa
+dibaca orang lokal" yang tadinya coba dijembatani.
+
+Yang tetap berlaku dari kesimpulan awal: 中文 di situs ini masih
+**aksen tipografi/brand** (nama, tagline, nama hidangan), bukan terjemahan
+penuh — **tidak ada layer terjemahan** (tanpa routing `/en` `/zh`, tanpa
+dictionary per bahasa). Itu bagian dari argumen yang tetap benar terlepas
+dari Simplified/Traditional. Lihat `docs/02-desain.md` untuk detailnya.
 
 **3. Non-halal harus dinyatakan tenang dan awal.** Di Malaysia ini bukan detail
 kecil — ini soal menghormati ekspektasi orang dan menentukan siapa audiensnya.
@@ -90,6 +98,7 @@ Harus masuk ke konten dengan tenang, tidak dikubur di footer, tidak pula canggun
 
 ## Catatan teknis yang lahir dari brief
 
-Font Traditional Chinese berukuran **5–15 MB**. Situs ini cuma memakai segelintir
-karakter (牛肉麵, 好味道，好心情, nama hidangan). Kalau nanti dipakai sebagai
+Font Chinese (Simplified) berukuran **5–15 MB** kalau full character set.
+Situs ini cuma memakai segelintir karakter (牛肉面馆, 好味道，好心情, nama
+hidangan). Kalau nanti dipakai sebagai
 webfont (saat ini masih fallback sistem), harus di-**subset** jadi beberapa KB.

@@ -19,8 +19,10 @@ mekanismenya, bukan kontennya:
 
 ### Kenapa OutlineMark itu keputusan paling penting di sini
 
-Perlakuan huruf outline itu diisi **牛肉麵**, bukan nama kafe referensinya.
-Satu gerakan ini menyelesaikan dua masalah sekaligus:
+Perlakuan huruf outline itu diisi **牛肉面馆** (Simplified, mengikuti logo
+asli klien di flyer promo — lihat "Kenapa Simplified, bukan Traditional" di
+bawah), bukan nama kafe referensinya. Satu gerakan ini menyelesaikan dua
+masalah sekaligus:
 
 - mandat bilingual dari brief — tanpa perlu membangun layer terjemahan penuh
   (lihat "Kenapa tidak full i18n" di bawah),
@@ -30,17 +32,28 @@ Satu gerakan ini menyelesaikan dua masalah sekaligus:
   tidak bentrok dengannya — device ini hidup di lapisan visual yang berbeda
   (lihat `public/brand/README.md`).
 
+## Kenapa Simplified, bukan Traditional
+
+Sebelum ada materi brand asli dari klien, dokumen ini sempat menyimpulkan
+Traditional Chinese (繁中) sebagai pilihan yang tepat — logikanya, brief
+tidak menyebut varian dan Malaysia resminya Simplified, jadi Traditional
+dibaca sebagai "penanda keaslian Taiwan". Itu asumsi, bukan fakta. Flyer
+promo asli klien ("Opening this August") menulis logonya **牛肉面馆** —
+Simplified, bukan Traditional (麵/館 → 面/馆), dan begitu juga semua teks
+Cina lain di flyer itu. Situs ini sekarang ikut itu: Simplified, karena itu
+tulisan asli klien sendiri, bukan karena alasan sinyal budaya. Kebetulan ini
+juga otomatis cocok dengan Simplified yang dipakai resmi di Malaysia.
+
 ## Kenapa tidak full bilingual routing (`/en` `/zh`)
 
 Sempat ada draf awal repo ini yang membangun routing locale penuh (`/en`,
-`/zh`, dictionary per bahasa). Itu dibuang secara sadar. Alasannya ada di
-`docs/01-brief.md`: Malaysia memakai Chinese **Simplified** secara resmi;
-Traditional Chinese di situs ini adalah **penanda keaslian Taiwan**, bukan
-alat komunikasi untuk pembaca lokal. Membangun i18n penuh untuk sinyal brand,
-bukan kebutuhan bahasa yang nyata, adalah scope besar untuk masalah yang
-tidak ada. Situsnya English-primary; 繁中 muncul sebagai aksen tipografi/brand
-(nama, tagline, nama hidangan di menu) lewat `OutlineMark` dan field
-`chinese` di `lib/content.ts` — bukan lewat rute atau dictionary terpisah.
+`/zh`, dictionary per bahasa). Itu dibuang secara sadar — argumen ini berdiri
+lepas dari soal Simplified/Traditional di atas. Membangun i18n penuh
+(routing per bahasa, dictionary per bahasa) untuk sesuatu yang cuma perlu
+jadi aksen brand adalah scope besar untuk masalah yang tidak ada. Situsnya
+English-primary; 中文 muncul sebagai aksen tipografi/brand (nama, tagline,
+nama hidangan di menu) lewat `OutlineMark` dan field `chinese` di
+`lib/content.ts` — bukan lewat rute atau dictionary terpisah.
 
 ## Token warna
 
