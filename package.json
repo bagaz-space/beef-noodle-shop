@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-placeholders.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:placeholders": "node scripts/check-placeholders.mjs"
   },
   "dependencies": {
     "next": "16.3.1",

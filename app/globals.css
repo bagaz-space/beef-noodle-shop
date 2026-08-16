@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens for The Beef Noodle Shop.
+ *
+ * Ported from the "Terang" direction of the noodle-shop-samples comparison
+ * repo (chosen by the client). That repo scoped these same token names to a
+ * `.theme-terang` class, one of several directions living side by side. This
+ * repo only ever renders one design, so they live directly on `:root` —
+ * same names, same values, no scoping needed.
+ */
+
+:root {
+  /* Paper Cream from the brief. Warm, never sterile white. */
+  --ground: #f4ede1;
+  --ground-alt: #ede4d5;
+
+  --ink: #2b2320; /* Ink Brown — warmer than pure black, per the brief */
+  --ink-muted: #6e625a;
+
+  --accent: #b5502c; /* Broth Rust */
+  --gold: #c99a3f; /* Warm Gold */
+
+  --line: rgba(43, 35, 32, 0.16);
+
+  /*
+   * `--font-display-src` / `--font-body-src` are set by next/font in
+   * app/layout.tsx (a class on <html>). Routing the semantic tokens below
+   * through them — rather than binding next/font directly to
+   * `--font-display` / `--font-body` — means a plain `:root` declaration
+   * here can't end up in a specificity fight with next/font's own rule for
+   * the same property.
+   */
+  --font-display: var(--font-display-src, ui-sans-serif, system-ui, sans-serif);
+  --font-body: var(--font-body-src, ui-sans-serif, system-ui, sans-serif);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+}

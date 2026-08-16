@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Third-party skill tooling, not app source — not ours to lint/fix.
+    ".claude/**",
+    ".superpowers/**",
   ]),
 ]);
 
