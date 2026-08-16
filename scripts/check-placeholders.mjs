@@ -79,9 +79,9 @@ const detail = [];
 if (flagIsPlaceholder) detail.push("CONTENT_STATUS.placeholder is still true");
 detail.push(...found);
 detail.push("");
-detail.push('Photos on the page are Unsplash stand-ins labeled "Temp stock" inline —');
-detail.push("see components/Photo.tsx and lib/menuPhotos.ts. Swap for the client's own");
-detail.push("photography before this ships.");
+detail.push("Some photos are still Unsplash stand-ins, labeled \"Temp stock\" inline —");
+detail.push("see components/Photo.tsx and lib/menuPhotos.ts. Others are real but still");
+detail.push("missing a caption. Swap the rest and add captions before this ships.");
 
 if (process.env.ALLOW_PLACEHOLDER_BUILD) {
   console.warn("");

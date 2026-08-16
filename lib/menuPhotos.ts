@@ -1,27 +1,37 @@
 /**
- * One reference photo per menu category. Unsplash stand-ins, shared by every
- * component that shows a dish — kept here, not in `content.ts`, since these
- * are implementation-detail URLs (which stock photo, at what crop), not
- * restaurant content.
+ * One reference photo per menu category, shared by every component that
+ * shows a dish — kept here, not in `content.ts`, since these are
+ * implementation-detail URLs (which photo, at what crop), not restaurant
+ * content.
  *
- * Widths are 1800px because these render as full-width section backgrounds
- * (see `MenuCategory`), not thumbnails — they need the source resolution.
+ * `credit` set means it's still a temporary Unsplash stand-in (renders
+ * "Temp stock — {credit}", impossible to ship by accident — see
+ * components/Photo.tsx). No `credit` means it's a real photo from the
+ * client; `caption` on those is optional and still pending for all three —
+ * add it as soon as the client sends one, don't invent it.
  */
-export const CATEGORY_PHOTOS: Record<string, { src: string; alt: string }> = {
+export const CATEGORY_PHOTOS: Record<
+  string,
+  { src: string; alt: string; credit?: string; caption?: string }
+> = {
   "beef-noodles": {
-    src: "https://images.unsplash.com/photo-1774702541015-101e48834357?auto=format&fit=crop&w=1800&q=80",
-    alt: "Reference: braised beef noodle soup — stand-in for the shop's own bowl",
+    src: "/menu/beef-brisket.jpg",
+    alt: "Spicy braised Australian beef brisket noodle soup",
+    // caption: pending from the client
   },
   rice: {
-    src: "https://images.unsplash.com/photo-1682566509547-5961bc5ea394?auto=format&fit=crop&w=1800&q=80",
-    alt: "Reference: braised pork over rice — stand-in for the shop's own bowl",
+    src: "/menu/lu-rou-fan.jpg",
+    alt: "Lu Rou Fan — braised minced pork over rice",
+    // caption: pending from the client
   },
   sides: {
     src: "https://images.unsplash.com/photo-1781785164696-0154e4dd70c1?auto=format&fit=crop&w=1800&q=80",
     alt: "Reference: steamed gua bao bun with pork belly — stand-in for the shop's own bao",
+    credit: "Unsplash",
   },
   sweet: {
-    src: "https://images.unsplash.com/photo-1768204042188-f5a337e61ca5?auto=format&fit=crop&w=1800&q=80",
-    alt: "Reference: strawberry shaved ice dessert — stand-in for the shop's own shaved ice",
+    src: "/menu/plum-dessert.jpg",
+    alt: "Plum-syrup shaved ice dessert",
+    // caption: pending from the client
   },
 };

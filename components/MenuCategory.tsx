@@ -15,27 +15,29 @@ export function MenuCategory({
   section: MenuSection;
   index: number;
   total: number;
-  photo?: { src: string; alt: string };
+  photo?: { src: string; alt: string; credit?: string; caption?: string };
 }) {
   const counter = `${String(index).padStart(2, "0")}/${String(total).padStart(2, "0")}`;
   const onPhoto = Boolean(photo);
+  const label = photo?.credit ? `Temp stock — ${photo.credit}` : photo?.caption;
 
   return (
     <div
       id={section.id}
-      className={`relative overflow-hidden ${onPhoto ? "rounded-lg" : ""}`}
+      className={`group relative overflow-hidden ${onPhoto ? "rounded-lg" : ""}`}
       style={onPhoto ? { minHeight: "18rem", scrollMarginTop: "6rem" } : { scrollMarginTop: "6rem" }}
     >
       {photo ? (
         <>
           {/* eslint-disable-next-line @next/next/no-img-element --
-              Same reasoning as components/Photo.tsx: temporary external
-              Unsplash stand-in, swap for next/image once real photography
-              lands in public/. */}
+              Same reasoning as components/Photo.tsx: some of these are
+              still temporary external Unsplash stand-ins, some are real
+              local photos — not worth splitting the next/image config
+              between the two while both coexist here. */}
           <img
             src={photo.src}
             alt={photo.alt}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             style={{ filter: "brightness(0.55) saturate(0.9)" }}
           />
           {/* Light tint, tied to the --ink token (not a hardcoded rgb) — just
@@ -104,12 +106,12 @@ export function MenuCategory({
         </div>
       </div>
 
-      {photo ? (
+      {label ? (
         <span
           className="absolute bottom-0 right-0 m-3 px-2 py-1 text-[10px] uppercase tracking-[0.15em] sm:m-4"
           style={{ background: "var(--ink)", color: "var(--ground-alt)" }}
         >
-          Temp stock — Unsplash
+          {label}
         </span>
       ) : null}
     </div>

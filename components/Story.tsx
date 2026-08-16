@@ -52,10 +52,12 @@ export function Story() {
           ))}
         </div>
 
+        {/* Real photo from the client. No caption yet — pending, see
+            docs/03-konvensi.md and Photo.tsx for how the label behaves
+            once one arrives. */}
         <Photo
-          src="https://images.unsplash.com/photo-1631709497146-a239ef373cf1?auto=format&fit=crop&w=900&q=80"
-          alt="Reference: a bowl of beef noodle soup — stand-in for the shop's own bowl"
-          credit="Unsplash"
+          src="/menu/classic-beef-noodles.jpg"
+          alt="A bowl of the shop's classic beef noodles"
           rounded
           className="h-56 w-full sm:h-72 lg:h-full"
         />
