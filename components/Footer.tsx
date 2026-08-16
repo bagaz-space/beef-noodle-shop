@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { brand, delivery, labels, menu, nav, outlet } from "@/lib/content";
+import { brand, contact, delivery, labels, menu, nav, outlet } from "@/lib/content";
 import { DiamondGrid } from "./DiamondGrid";
 
 export function Footer() {
@@ -24,7 +24,7 @@ export function Footer() {
         </p>
       </div>
 
-      <div className="mt-16 grid gap-12 sm:grid-cols-3">
+      <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <DiamondGrid className="self-end" />
 
         <div>
@@ -63,7 +63,27 @@ export function Footer() {
           </div>
           <p className="mt-6 text-xs uppercase tracking-tight" style={{ color: "var(--ink-muted)" }}>
             {outlet.unit}, {outlet.name}
+            <br />
+            {outlet.address}
           </p>
+        </div>
+
+        <div>
+          <p className="text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
+            {labels.contact}
+          </p>
+          <div className="mt-6 space-y-3 text-xs uppercase tracking-tight">
+            {contact.map((c) => (
+              <a
+                key={c.name}
+                href={c.url}
+                className="block hover:opacity-70"
+                style={{ color: "var(--ink-muted)" }}
+              >
+                {c.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -64,8 +64,10 @@ export const brand = {
 
 export const outlet = {
   name: "Paradigm Mall, Petaling Jaya",
-  /** PLACEHOLDER — brief gives the mall, not the unit. */
-  unit: "Lot 0-00, Level 0",
+  /** Real — from the client's "Opening this August" promo flyer. */
+  unit: "Unit 2F-17, Level 2",
+  /** Real — full street address, same source as `unit`. */
+  address: "No 1, Jalan SS 7/26a, SS 7, 47301 Petaling Jaya, Selangor",
   city: "Petaling Jaya, Selangor",
   country: "Malaysia",
   seats: 30,
@@ -82,6 +84,14 @@ export const delivery = [
   { name: "GrabFood", url: "#" },
   { name: "ShopeeFood", url: "#" },
   { name: "Foodpanda", url: "#" },
+] as const;
+
+/** Real — from the client's promo flyer (email) and WhatsApp number. */
+export const contact = [
+  { name: "Email", url: "mailto:beef.noodle.shop@gmail.com" },
+  { name: "WhatsApp", url: "https://wa.me/60124801208" },
+  { name: "Instagram", url: "https://www.instagram.com/thebeefnoodleshop/" },
+  { name: "Facebook", url: "https://www.facebook.com/people/The-Beef-Noodle-Shop/61590138886453/" },
 ] as const;
 
 /* ── Navigation & labels ─────────────────────────────────────────────── */
@@ -101,6 +111,8 @@ export const labels = {
   location: "Location",
   delivery: "Delivery",
   dietary: "Dietary",
+  /** Footer column eyebrow for the contact/social links. */
+  contact: "Contact",
   /** Section eyebrow for the small set of dishes highlighted on the page. */
   signature: "Signature",
 } as const;

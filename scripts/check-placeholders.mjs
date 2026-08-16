@@ -62,7 +62,6 @@ const suspects = [
   { pattern: /\{\s*name:\s*"GrabFood",\s*url:\s*"#"/, what: "GrabFood link still points at #" },
   { pattern: /\{\s*name:\s*"ShopeeFood",\s*url:\s*"#"/, what: "ShopeeFood link still points at #" },
   { pattern: /\{\s*name:\s*"Foodpanda",\s*url:\s*"#"/, what: "Foodpanda link still points at #" },
-  { pattern: /unit:\s*"Lot 0-00, Level 0"/, what: "outlet unit number is still Lot 0-00, Level 0" },
 ];
 
 const found = suspects.filter((s) => s.pattern.test(src)).map((s) => s.what);
