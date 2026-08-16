@@ -29,7 +29,7 @@ export function Signature() {
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">
         <div>
-          <Photo {...CATEGORY_PHOTOS.sides} rounded className="h-64 w-full sm:h-80" />
+          <Photo {...CATEGORY_PHOTOS.sides} rounded zoom={1.2} className="h-64 w-full sm:h-80" />
           <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
             {gua.name} <span style={{ color: "var(--ink-muted)" }}>{gua.chinese}</span>
           </p>
@@ -39,6 +39,7 @@ export function Signature() {
           <Photo
             {...CATEGORY_PHOTOS["beef-noodles"]}
             rounded
+            zoom={1.2}
             className="h-[26rem] w-full sm:h-[30rem]"
           />
           <div className="mt-6 grid gap-2 sm:grid-cols-[1fr_auto] sm:items-end">
@@ -52,7 +53,7 @@ export function Signature() {
         </div>
 
         <div>
-          <Photo {...CATEGORY_PHOTOS.rice} rounded className="h-64 w-full sm:h-80" />
+          <Photo {...CATEGORY_PHOTOS.rice} rounded zoom={1.2} className="h-64 w-full sm:h-80" />
           <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
             {rice.name} <span style={{ color: "var(--ink-muted)" }}>{rice.chinese}</span>
           </p>

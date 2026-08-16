@@ -20,6 +20,7 @@ export function Photo({
   compact = false,
   scrimTop = false,
   rounded = false,
+  zoom = 1,
   children,
 }: {
   src: string;
@@ -36,6 +37,19 @@ export function Photo({
   scrimTop?: boolean;
   /** Slight corner radius — most of the site stays hard-edged; opt in per use. */
   rounded?: boolean;
+  /**
+   * Crop in tighter than a plain centered object-cover would, e.g. `1.2`
+   * for 20% — for photos with a lot of empty background around the
+   * subject relative to their container. Applied via the legacy
+   * `transform` property, deliberately not Tailwind's `scale` utility:
+   * Tailwind v4's `scale-*` classes set the native CSS `scale` property,
+   * which the hover zoom below also uses — two rules fighting over the
+   * same property would just override, not multiply. `transform` and
+   * `scale` are independent CSS properties that compose, so this base
+   * crop and the hover bump stack correctly instead of one replacing
+   * the other.
+   */
+  zoom?: number;
   /** Optional content positioned above the photo (and its scrim). */
   children?: ReactNode;
 }) {
@@ -53,7 +67,10 @@ export function Photo({
         src={src}
         alt={alt}
         className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        style={dark ? { filter: "brightness(0.55) saturate(0.9)" } : undefined}
+        style={{
+          ...(dark ? { filter: "brightness(0.55) saturate(0.9)" } : null),
+          ...(zoom !== 1 ? { transform: `scale(${zoom})` } : null),
+        }}
       />
       {scrimTop ? (
         <div
