@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
-import { brand, CONTENT_STATUS, outlet } from "@/lib/content";
+import { brand, CONTENT_STATUS, intro, outlet } from "@/lib/content";
 import "./globals.css";
 
 /*
@@ -24,7 +24,7 @@ const archivoBody = Archivo({
 
 export const metadata: Metadata = {
   title: `${brand.name} ${brand.chinese} — ${outlet.name}`,
-  description: brand.tagline.en,
+  description: intro,
   // Flip to index once CONTENT_STATUS.placeholder (lib/content.ts) is false.
   // The menu, hours and photos on the page right now are not real yet —
   // nothing here should be showing up in search results.

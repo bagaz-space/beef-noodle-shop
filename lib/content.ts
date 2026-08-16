@@ -94,6 +94,17 @@ export const contact = [
   { name: "Facebook", url: "https://www.facebook.com/people/The-Beef-Noodle-Shop/61590138886453/" },
 ] as const;
 
+/**
+ * Real — the client's own promo/announcement copy ("Opening this August"
+ * flyer), used verbatim. Deliberately NOT part of `story`: this is
+ * marketing copy answering "what is this place, why visit" — not the
+ * business's history. Used both as the site's meta description
+ * (app/layout.tsx) and as visible copy in the Welcome section
+ * (components/Welcome.tsx), right after the hero and before Story.
+ */
+export const intro =
+  "Looking for a new restaurant in Petaling Jaya or wondering where to eat in PJ or Kuala Lumpur? Whether you're planning lunch, tea time or dinner, The Beef Noodle Shop offers a warm, welcoming place to gather with family and friends. Inspired by over 40 years of Taiwanese family tradition, we're bringing comforting, hearty meals to Paradigm Mall PJ.";
+
 /* ── Navigation & labels ─────────────────────────────────────────────── */
 
 export const nav = {
@@ -115,6 +126,8 @@ export const labels = {
   contact: "Contact",
   /** Section eyebrow for the small set of dishes highlighted on the page. */
   signature: "Signature",
+  /** Eyebrow for the Welcome section, right after the hero. */
+  welcome: "Welcome",
 } as const;
 
 /** Formats an opening date into a short label, e.g. "Open since Aug 2026". */
