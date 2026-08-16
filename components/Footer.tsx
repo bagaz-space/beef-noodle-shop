@@ -2,18 +2,19 @@ import type { ReactElement } from "react";
 import Link from "next/link";
 import { brand, contact, delivery, labels, menu, nav, outlet } from "@/lib/content";
 import { DiamondGrid } from "./DiamondGrid";
-import { FacebookIcon, InstagramIcon, MailIcon, WhatsAppIcon } from "./icons";
+import { FacebookLogo, GmailLogo, InstagramLogo, WhatsAppLogo } from "./icons";
 
 /*
- * Icon-only, so the eye reads it as a row of channels rather than another
- * line of text — kept out of lib/content.ts since it's a presentation
- * choice, not restaurant content (same reasoning as lib/menuPhotos.ts).
+ * Real platform logos, so the eye reads it as a row of channels rather than
+ * another line of text — kept out of lib/content.ts since it's a
+ * presentation choice, not restaurant content (same reasoning as
+ * lib/menuPhotos.ts).
  */
 const CONTACT_ICONS: Record<string, (props: { className?: string }) => ReactElement> = {
-  Email: MailIcon,
-  WhatsApp: WhatsAppIcon,
-  Instagram: InstagramIcon,
-  Facebook: FacebookIcon,
+  Email: GmailLogo,
+  WhatsApp: WhatsAppLogo,
+  Instagram: InstagramLogo,
+  Facebook: FacebookLogo,
 };
 
 export function Footer() {
