@@ -41,6 +41,14 @@ npm run dev
 | Lolos sengaja | `ALLOW_PLACEHOLDER_BUILD=1 npm run build` |
 | Skrip | `scripts/check-placeholders.mjs` |
 
+## Konten asli yang sedang masuk
+
+`konten-baru/` — folder lokal (di-gitignore, tidak ikut ke GitHub karena
+repo ini publik dan isinya konten bisnis mentah) tempat menaruh menu, harga,
+jam, link delivery, cerita bisnis, dan foto asli sebelum diolah ke
+`lib/content.ts` dkk. Kalau folder itu ada isinya, cek `konten-baru/README.md`
+dulu sebelum menganggap `lib/content.ts` sebagai sumber paling baru.
+
 ## Yang masih ditunggu dari klien
 
 1. **Foto.** Penentu terbesar hasil akhirnya — ruangan 30-pax, mangkuk, uap,

@@ -42,3 +42,6 @@ next-env.d.ts
 
 # brainstorming visual companion (ephemeral)
 .superpowers/
+
+# raw client content staging — real business info/photos, repo is public
+/konten-baru/
