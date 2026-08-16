@@ -59,3 +59,40 @@ export function BagIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export function MailIcon({ className }: IconProps) {
+  return (
+    <svg {...strokeProps} className={className} aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <polyline points="3 7 12 13 21 7" />
+    </svg>
+  );
+}
+
+export function WhatsAppIcon({ className }: IconProps) {
+  return (
+    <svg {...strokeProps} className={className} aria-hidden="true">
+      <path d="M12 3.5c-4.7 0-8.5 3.7-8.5 8.3 0 1.9.6 3.6 1.7 5L4 20.5l3.9-1.2c1.3.8 2.7 1.2 4.1 1.2 4.7 0 8.5-3.7 8.5-8.3S16.7 3.5 12 3.5Z" />
+      <path d="M8.7 8.9c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.4.2.5.6 1.5.6 1.6.1.1.1.3 0 .4-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.2 1.6 1.9 1.1 1 2 1.2 2.3 1.4.3.1.5.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.4.7c.2.1.4.2.4.4 0 .2 0 1-.4 1.4-.4.4-1.2.8-2.2.5-1.7-.4-3.4-1.4-4.7-2.7-1.1-1.1-1.9-2.4-2.3-3.3-.4-.9-.2-1.6 0-2Z" />
+    </svg>
+  );
+}
+
+export function InstagramIcon({ className }: IconProps) {
+  return (
+    <svg {...strokeProps} className={className} aria-hidden="true">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17" cy="7" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function FacebookIcon({ className }: IconProps) {
+  return (
+    <svg {...strokeProps} className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M14 8.5h-1.3c-1 0-1.7.7-1.7 1.7V11H14l-.4 2.3h-2.6V19" />
+    </svg>
+  );
+}

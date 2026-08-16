@@ -1,6 +1,20 @@
+import type { ReactElement } from "react";
 import Link from "next/link";
 import { brand, contact, delivery, labels, menu, nav, outlet } from "@/lib/content";
 import { DiamondGrid } from "./DiamondGrid";
+import { FacebookIcon, InstagramIcon, MailIcon, WhatsAppIcon } from "./icons";
+
+/*
+ * Icon-only, so the eye reads it as a row of channels rather than another
+ * line of text — kept out of lib/content.ts since it's a presentation
+ * choice, not restaurant content (same reasoning as lib/menuPhotos.ts).
+ */
+const CONTACT_ICONS: Record<string, (props: { className?: string }) => ReactElement> = {
+  Email: MailIcon,
+  WhatsApp: WhatsAppIcon,
+  Instagram: InstagramIcon,
+  Facebook: FacebookIcon,
+};
 
 export function Footer() {
   return (
@@ -72,17 +86,22 @@ export function Footer() {
           <p className="text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
             {labels.contact}
           </p>
-          <div className="mt-6 space-y-3 text-xs uppercase tracking-tight">
-            {contact.map((c) => (
-              <a
-                key={c.name}
-                href={c.url}
-                className="block hover:opacity-70"
-                style={{ color: "var(--ink-muted)" }}
-              >
-                {c.name}
-              </a>
-            ))}
+          <div className="mt-6 flex flex-wrap gap-3">
+            {contact.map((c) => {
+              const Icon = CONTACT_ICONS[c.name];
+              return (
+                <a
+                  key={c.name}
+                  href={c.url}
+                  aria-label={c.name}
+                  title={c.name}
+                  className="grid size-11 place-items-center rounded-full border hover:opacity-70"
+                  style={{ borderColor: "var(--line)", color: "var(--ink)" }}
+                >
+                  <Icon className="size-5" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
