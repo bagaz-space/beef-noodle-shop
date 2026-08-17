@@ -8,13 +8,13 @@ import { story } from "@/lib/content";
 export function Values() {
   return (
     <section className="pt-2 pb-10 sm:pt-4 sm:pb-14">
-      {/* One continuous block, not split into columns — fills the
-          section's full width, same as the photo/heading row above it. */}
-      <div>
+      {/* Multi-column instead of one narrow block — fills the section's
+          full width while each column stays a comfortable reading length. */}
+      <div className="columns-1 gap-x-12 sm:columns-2 lg:gap-x-16">
         {story.narrative.map((paragraph, i) => (
           <p
             key={i}
-            className="mb-5 text-base leading-relaxed last:mb-0 sm:text-lg"
+            className="mb-5 break-inside-avoid text-base leading-relaxed sm:text-lg"
             style={{ color: "var(--ink-muted)" }}
           >
             {paragraph}
