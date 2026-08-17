@@ -6,11 +6,11 @@ const totalItems = menu.reduce((sum, section) => sum + section.items.length, 0);
 
 /*
  * A spread across categories rather than a "Best Sellers" claim: there's no
- * sales data to back that, so this shows a sides dish, the flagship beef
+ * sales data to back that, so this shows pork chop rice, the flagship beef
  * noodle bowl (larger, with its own description), and lu rou fan instead.
  * No prices, per the client's request.
  */
-const sides = menu.find((s) => s.id === "sides")!.items[0];
+const porkChop = menu.find((s) => s.id === "rice")!.items[1];
 const beef = menu.find((s) => s.id === "beef-noodles")!.items[0];
 const rice = menu.find((s) => s.id === "rice")!.items[0];
 
@@ -31,9 +31,19 @@ export function Signature() {
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">
         <div>
-          <Photo {...CATEGORY_PHOTOS.sides} rounded zoom={1.2} className="h-64 w-full sm:h-80" />
+          {/* Real photo from the client, specific to this dish (not the
+              shared per-category CATEGORY_PHOTOS — Rice's category photo
+              is already Lu Rou Fan, used in the third tile below). No
+              caption yet — pending. */}
+          <Photo
+            src="/menu/pork-chop-rice.jpg"
+            alt="Crispy fried pork chop sliced over steamed rice"
+            rounded
+            zoom={1.2}
+            className="h-64 w-full sm:h-80"
+          />
           <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
-            {sides.name} <span style={{ color: "var(--ink-muted)" }}>{sides.chinese}</span>
+            {porkChop.name} <span style={{ color: "var(--ink-muted)" }}>{porkChop.chinese}</span>
           </p>
         </div>
 
