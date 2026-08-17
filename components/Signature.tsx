@@ -44,14 +44,14 @@ export function Signature() {
             caption="Crispy. Juicy. Golden."
             className="h-64 w-full sm:h-80"
           />
-          <div className="mt-6 grid gap-2 sm:grid-cols-[1fr_auto] sm:items-end">
-            <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
+          <div>
+            <p className="mt-1 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
               {porkChop.name} <span style={{ color: "var(--ink-muted)" }}>{porkChop.chinese}</span>
             </p>
           </div>
             <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
             {porkChop.description}
-          </p>
+            </p>
         </div>
 
         <div>
@@ -73,9 +73,14 @@ export function Signature() {
 
         <div>
           <Photo {...CATEGORY_PHOTOS.rice} rounded zoom={1.2} className="h-64 w-full sm:h-80" />
-          <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
-            {rice.name} <span style={{ color: "var(--ink-muted)" }}>{rice.chinese}</span>
-          </p>
+          <div>
+            <p className="mt-1 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
+              {rice.name} <span style={{ color: "var(--ink-muted)" }}>{rice.chinese}</span>
+            </p>
+          </div>
+            <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+            {rice.description}
+            </p>
         </div>
       </div>
     </section>
