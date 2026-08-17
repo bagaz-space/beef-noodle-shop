@@ -38,7 +38,7 @@ export function Story() {
         </p>
       </div>
 
-      <div className="mt-12 grid gap-8 border-t pt-8 lg:grid-cols-[1fr_18rem] lg:gap-12" style={{ borderColor: "var(--line)" }}>
+      <div className="mt-12 grid gap-8 border-t pt-8 lg:grid-cols-[1fr_24rem] lg:gap-12" style={{ borderColor: "var(--line)" }}>
         <div className="flex flex-col justify-center divide-y" style={{ borderColor: "var(--line)" }}>
           {facts.map((fact) => (
             <div key={fact.n} className="flex items-start gap-4 py-5 first:pt-0 last:pb-0">
@@ -58,9 +58,9 @@ export function Story() {
           src="/menu/classic-beef-noodles.jpg"
           alt="A bowl of the shop's classic beef noodles"
           rounded
-          zoom={1.15}
+          zoom={1.10}
           caption="A bowl that tells a story."
-          className="h-64 w-full sm:h-80 lg:h-full"
+          className="aspect-[4/3] w-full"
         />
       </div>
     </section>
