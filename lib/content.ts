@@ -253,6 +253,21 @@ export const menu: MenuSection[] = [
         description: "Fresh greens, lightly cooked and topped with fragrant garlic oil.",
         price: 9.9,
       },
+      /**
+       * Real — name and description sourced from the client's own
+       * Instagram post (@thebeefnoodleshop, "New Drop Pork Chop — Crispy.
+       * Juicy. Golden..."). A standalone side, distinct from Pork Chop
+       * Rice (rice category) per the client. Clean product photo (no
+       * promo text) supplied directly, saved at
+       * public/menu/crispy-pork-chop.jpg, not yet wired into a display
+       * slot. Chinese name and price still PLACEHOLDER.
+       */
+      {
+        name: "Crispy Pork Chop",
+        chinese: "香酥排骨",
+        description: "Marinated, coated, and fried until perfectly crunchy.",
+        price: 12.9,
+      },
     ],
   },
   {

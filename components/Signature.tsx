@@ -6,11 +6,11 @@ const totalItems = menu.reduce((sum, section) => sum + section.items.length, 0);
 
 /*
  * A spread across categories rather than a "Best Sellers" claim: there's no
- * sales data to back that, so this shows pork chop rice, the flagship beef
+ * sales data to back that, so this shows crispy pork chop, the flagship beef
  * noodle bowl (larger, with its own description), and lu rou fan instead.
  * No prices, per the client's request.
  */
-const porkChop = menu.find((s) => s.id === "rice")!.items[1];
+const porkChop = menu.find((s) => s.id === "sides")!.items[1];
 const beef = menu.find((s) => s.id === "beef-noodles")!.items[0];
 const rice = menu.find((s) => s.id === "rice")!.items[0];
 
@@ -32,16 +32,16 @@ export function Signature() {
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">
         <div>
           {/* Real photo from the client, specific to this dish (not the
-              shared per-category CATEGORY_PHOTOS — Rice's category photo
-              is already Lu Rou Fan, used in the third tile below). Caption
-              from the client's own Instagram post ("Pork Chop — Best in
-              town"). */}
+              shared per-category CATEGORY_PHOTOS — Sides' category photo
+              is already Vegetables, used in the Menu section). Caption
+              from the client's own Instagram post ("New Drop Pork Chop —
+              Crispy. Juicy. Golden"). */}
           <Photo
-            src="/menu/pork-chop-rice.jpg"
-            alt="Crispy fried pork chop sliced over steamed rice"
+            src="/menu/crispy-pork-chop.jpg"
+            alt="Crispy fried pork chop held with chopsticks, steaming hot"
             rounded
             zoom={1.3}
-            caption="Best in town."
+            caption="Crispy. Juicy. Golden."
             className="h-64 w-full sm:h-80"
           />
           <div className="mt-6 grid gap-2 sm:grid-cols-[1fr_auto] sm:items-end">
