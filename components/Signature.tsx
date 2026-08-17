@@ -33,17 +33,24 @@ export function Signature() {
         <div>
           {/* Real photo from the client, specific to this dish (not the
               shared per-category CATEGORY_PHOTOS — Rice's category photo
-              is already Lu Rou Fan, used in the third tile below). No
-              caption yet — pending. */}
+              is already Lu Rou Fan, used in the third tile below). Caption
+              from the client's own Instagram post ("Pork Chop — Best in
+              town"). */}
           <Photo
             src="/menu/pork-chop-rice.jpg"
             alt="Crispy fried pork chop sliced over steamed rice"
             rounded
-            zoom={1.6}
+            zoom={1.3}
+            caption="Best in town."
             className="h-64 w-full sm:h-80"
           />
-          <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
-            {porkChop.name} <span style={{ color: "var(--ink-muted)" }}>{porkChop.chinese}</span>
+          <div className="mt-6 grid gap-2 sm:grid-cols-[1fr_auto] sm:items-end">
+            <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
+              {porkChop.name} <span style={{ color: "var(--ink-muted)" }}>{porkChop.chinese}</span>
+            </p>
+          </div>
+            <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+            {porkChop.description}
           </p>
         </div>
 
