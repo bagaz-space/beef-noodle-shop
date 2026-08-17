@@ -7,10 +7,10 @@ import { story } from "@/lib/content";
  */
 export function Values() {
   return (
-    <section className="py-10 sm:py-14">
-      {/* One continuous block, not split into columns — max-w keeps line
-          length readable even at the section's full width. */}
-      <div className="max-w-3xl">
+    <section className="pt-2 pb-10 sm:pt-4 sm:pb-14">
+      {/* One continuous block, not split into columns — fills the
+          section's full width, same as the photo/heading row above it. */}
+      <div>
         {story.narrative.map((paragraph, i) => (
           <p
             key={i}
