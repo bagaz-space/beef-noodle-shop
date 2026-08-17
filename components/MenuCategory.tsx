@@ -35,7 +35,7 @@ export function MenuCategory({
   return (
     <div
       id={section.id}
-      className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14"
+      className={`grid items-center gap-8 lg:gap-14 ${photo ? "lg:grid-cols-2" : ""}`}
       style={{ scrollMarginTop: "6rem" }}
     >
       {photo ? (
