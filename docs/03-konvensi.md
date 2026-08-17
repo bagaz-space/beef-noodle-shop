@@ -55,7 +55,7 @@ app/
 components/          semua section + primitif dekoratif
 lib/
   content.ts         SATU sumber semua copy, harga, jam, dll.
-  menuPhotos.ts       URL foto per kategori menu (implementation detail, bukan content)
+  menuPhotos.ts       URL foto per item menu, dikunci nama item (implementation detail, bukan content)
 docs/                 brief, sistem desain, konvensi (dokumen ini)
 scripts/              build guard placeholder
 ```
