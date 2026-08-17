@@ -159,20 +159,18 @@ export const story = {
   ],
   sourcing: ["Australian beef", "Australian soup bone", "Quality pork"],
   /**
-   * PLACEHOLDER — INVENTED, not from the brief. Long-form narrative copy
-   * written to give the story section a realistic shape (same reason the
-   * menu/prices/hours placeholders exist — see the file header). It's
-   * grounded in the real facts above (era, sourcing, seats, delivery,
-   * dietary, tagline, crewLines) but the sentences themselves are not
-   * client-supplied. Replace with the client's actual story before this
-   * ships — do not show this copy to the client as if it were real.
+   * Real — the client's own long-form story copy, supplied directly (not
+   * from the original brief, and not the flyer's `intro` marketing copy
+   * either — see that field's comment for why the two stay separate).
+   * Rendered by components/Values.tsx. Split into paragraphs here purely
+   * for the multi-column layout; no wording was added or removed.
    */
   narrative: [
-    "Long before this room existed, there was a stall — a single pot, a single family, and a broth that started simmering hours before anyone walked in. That's where this recipe comes from: not a test kitchen, not a focus group, but a kitchen that opened before sunrise because the soup needed the time.",
-    "The people who ate there stopped needing the menu. They knew what they wanted, and they knew it would be ready the way it always was. That kind of trust isn't built in a season — it's built bowl by bowl, over years, by never quietly changing the recipe when no one's watching.",
-    "What's in the bowl hasn't changed just because the room has. Australian beef shin and soup bone, simmered the long way. Noodles pulled by hand, not cut from a machine. Pork sourced for quality, not for the lowest price on the invoice. None of it is dramatic — it's just the difference between food made to be eaten and food made to be sold.",
-    "This room is the next chapter, not a reinvention. Thirty seats at Paradigm Mall, Petaling Jaya, takeaway at the counter, and delivery through GrabFood, ShopeeFood, and Foodpanda for the days a bowl needs to come to you instead. Everyone's welcome at the table — the kitchen is non-halal, stated plainly, not as a footnote.",
-    "Good food, better mood — 好味道，好心情 — isn't a slogan dreamed up for a signboard. It's what the people behind this counter actually believe, crew t-shirts and all: just slurp it, get back on the noodle roll, and let the bowl do the talking. The plan is more rooms like this one — but the broth starts the same way in every single one.",
+    "Before our doors even open for the morning rush, our broth is already simmering on the stove—just as it did in the 1980s when our founder's parents ran their original beef noodle shop. That shop wasn't built on passing food trends; it was built on patience, authentic Taiwanese recipes, and a dedication to quality ingredients like premium Australian beef and rich soup bones.",
+    "Decades later, The Beef Noodle Shop exists to continue that legacy. We didn't create our recipe for a trend cycle—we inherited it, bringing the same care and standards into a modern, welcoming space.",
+    "From our slow-simmered beef noodle soup and savoury Lu Rou Fan to crisp pork chop rice and refreshing plum ice, every dish is crafted to nourish both body and mind.",
+    "Whether you are gathering with family, taking a break from work, or dining solo, we offer high quality, honest comfort food at a price that feels right.",
+    "Built on the simple belief that good food brings a better mood, we invite you to pull up a seat, savor the warmth of a genuine family tradition, and enjoy the proper bowl of Taiwanese beef noodles you deserve.",
   ],
 } as const;
 

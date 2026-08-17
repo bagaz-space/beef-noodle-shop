@@ -6,10 +6,13 @@ import { Photo } from "./Photo";
 export function Heritage() {
   return (
     <section className="grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[24rem_1fr_11rem] lg:gap-12">
+      {/* Real photo from the client: two generations preparing food
+          together — the family tradition the narrative in Values.tsx
+          describes. No caption yet — pending, see Photo.tsx for how the
+          label behaves once one arrives. */}
       <Photo
-        src="https://images.unsplash.com/photo-1470114755716-3e1124c6c3bd?auto=format&fit=crop&w=900&q=80"
-        alt="Reference: a cook hand-pulling noodles — stand-in for the shop's own kitchen"
-        credit="Unsplash"
+        src="/story/family-tradition.jpg"
+        alt="Two generations preparing food together in the kitchen, grinding spices and wrapping dumplings by hand"
         dark
         rounded
         className="h-[22rem] w-full sm:h-[26rem] lg:h-[28rem]"

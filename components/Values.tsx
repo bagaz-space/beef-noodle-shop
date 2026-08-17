@@ -1,10 +1,9 @@
 import { story } from "@/lib/content";
 
 /**
- * Long-form story section — invented narrative copy (story.narrative is
- * explicitly marked PLACEHOLDER in lib/content.ts), written to give this
- * slot a realistic full shape. Sits as connective tissue between the
- * heritage photo section and the menu.
+ * Long-form story section — the client's own narrative copy
+ * (story.narrative in lib/content.ts). Sits as connective tissue between
+ * the heritage photo section and the menu.
  */
 export function Values() {
   return (
