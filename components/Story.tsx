@@ -52,13 +52,13 @@ export function Story() {
           ))}
         </div>
 
-        {/* Real photo from the client. No caption yet — pending, see
-            docs/03-konvensi.md and Photo.tsx for how the label behaves
-            once one arrives. */}
+        {/* Real photo from the client, with its own caption — see
+            konten-baru/foto/README.md for the full copy this is drawn from. */}
         <Photo
           src="/menu/classic-beef-noodles.jpg"
           alt="A bowl of the shop's classic beef noodles"
           rounded
+          caption="A bowl that tells a story."
           className="h-56 w-full sm:h-72 lg:h-full"
         />
       </div>

@@ -7,8 +7,9 @@
  * `credit` set means it's still a temporary Unsplash stand-in (renders
  * "Temp stock — {credit}", impossible to ship by accident — see
  * components/Photo.tsx). No `credit` means it's a real photo from the
- * client; `caption` on those is optional and still pending for all three —
- * add it as soon as the client sends one, don't invent it.
+ * client; `caption` on those is the client's own copy (see
+ * konten-baru/foto/README.md for the full text each short caption is drawn
+ * from) — `sides` is still the Unsplash stand-in and has no caption yet.
  */
 export const CATEGORY_PHOTOS: Record<
   string,
@@ -17,12 +18,12 @@ export const CATEGORY_PHOTOS: Record<
   "beef-noodles": {
     src: "/menu/beef-brisket.jpg",
     alt: "Spicy braised Australian beef brisket noodle soup",
-    // caption: pending from the client
+    caption: "Bold flavour. Deep spice. Tender beef.",
   },
   rice: {
     src: "/menu/lu-rou-fan.jpg",
     alt: "Lu Rou Fan — braised minced pork over rice",
-    // caption: pending from the client
+    caption: "A Taiwanese classic done right.",
   },
   sides: {
     src: "https://images.unsplash.com/photo-1781785164696-0154e4dd70c1?auto=format&fit=crop&w=1800&q=80",
@@ -32,6 +33,6 @@ export const CATEGORY_PHOTOS: Record<
   sweet: {
     src: "/menu/plum-dessert.jpg",
     alt: "Plum-syrup shaved ice dessert",
-    // caption: pending from the client
+    caption: "Cool down the Taiwanese way.",
   },
 };
