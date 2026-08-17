@@ -16,9 +16,8 @@ export function Photo({
   credit,
   caption,
   className = "",
-  dark = false,
+  dim = 1,
   compact = false,
-  scrimTop = false,
   rounded = false,
   zoom = 1,
   children,
@@ -30,11 +29,16 @@ export function Photo({
   /** Set only for real photos, once the client has supplied one. */
   caption?: string;
   className?: string;
-  dark?: boolean;
+  /**
+   * Brightness multiplier, for the rare photo that carries something on top
+   * of it. `1` (the default) leaves the photo alone — that is the right
+   * answer almost everywhere, and deliberately so: this replaced a boolean
+   * `dark` prop that dimmed to 0.55, which the client twice flagged as
+   * hiding the photo. Reach for a gentle value like 0.85, not a heavy one.
+   */
+  dim?: number;
   /** Smaller label, for thumbnail-sized uses (e.g. one per menu category). */
   compact?: boolean;
-  /** Dark top-down gradient, for text overlaid near the top of the photo. */
-  scrimTop?: boolean;
   /** Slight corner radius — most of the site stays hard-edged; opt in per use. */
   rounded?: boolean;
   /**
@@ -68,17 +72,10 @@ export function Photo({
         alt={alt}
         className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         style={{
-          ...(dark ? { filter: "brightness(0.55) saturate(0.9)" } : null),
+          ...(dim !== 1 ? { filter: `brightness(${dim})` } : null),
           ...(zoom !== 1 ? { transform: `scale(${zoom})` } : null),
         }}
       />
-      {scrimTop ? (
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-2/3"
-          style={{ background: "linear-gradient(to top, transparent, rgba(0,0,0,0.6))" }}
-        />
-      ) : null}
       {children}
       {label ? (
         <span

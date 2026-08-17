@@ -34,7 +34,9 @@ export function Hero() {
           src="https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?auto=format&fit=crop&w=2400&q=80"
           alt="Reference: warm-wood restaurant dining room — stand-in for the shop's own 30-pax room"
           credit="Unsplash"
-          dark
+          /* Just enough to hold the outline mark together over the bright
+             wall behind it — the photo still reads warm and lit, not dim. */
+          dim={0.85}
           rounded
           className="h-[23rem] w-full sm:h-[34rem] lg:h-[46rem]"
         />
