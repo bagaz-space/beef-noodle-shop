@@ -171,6 +171,7 @@ export const story = {
     "From our slow-simmered beef noodle soup and savoury Lu Rou Fan to crisp pork chop rice and refreshing plum ice, every dish is crafted to nourish both body and mind.",
     "Whether you are gathering with family, taking a break from work, or dining solo, we offer high quality, honest comfort food at a price that feels right.",
     "Built on the simple belief that good food brings a better mood, we invite you to pull up a seat, savor the warmth of a genuine family tradition, and enjoy the proper bowl of Taiwanese beef noodles you deserve.",
+    "Good food, better mood — 好味道，好心情 — isn't a slogan dreamed up for a signboard. It's what the people behind this counter actually believe, crew t-shirts and all: just slurp it, get back on the noodle roll, and let the bowl do the talking. The plan is more rooms like this one — but the broth starts the same way in every single one.",
   ],
 } as const;
 

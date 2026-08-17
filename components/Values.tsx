@@ -8,13 +8,13 @@ import { story } from "@/lib/content";
 export function Values() {
   return (
     <section className="py-10 sm:py-14">
-      {/* Multi-column instead of one narrow block — fills the section's
-          full width while each column stays a comfortable reading length. */}
-      <div className="columns-1 gap-x-12 sm:columns-2 lg:gap-x-16">
+      {/* One continuous block, not split into columns — max-w keeps line
+          length readable even at the section's full width. */}
+      <div className="max-w-3xl">
         {story.narrative.map((paragraph, i) => (
           <p
             key={i}
-            className="mb-5 break-inside-avoid text-base leading-relaxed sm:text-lg"
+            className="mb-5 text-base leading-relaxed last:mb-0 sm:text-lg"
             style={{ color: "var(--ink-muted)" }}
           >
             {paragraph}
