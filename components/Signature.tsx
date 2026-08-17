@@ -39,7 +39,7 @@ export function Signature() {
             src="/menu/pork-chop-rice.jpg"
             alt="Crispy fried pork chop sliced over steamed rice"
             rounded
-            zoom={1.2}
+            zoom={1.6}
             className="h-64 w-full sm:h-80"
           />
           <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>

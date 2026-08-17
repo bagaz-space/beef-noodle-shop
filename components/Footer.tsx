@@ -19,7 +19,7 @@ const CONTACT_ICONS: Record<string, (props: { className?: string }) => ReactElem
 
 export function Footer() {
   return (
-    <footer id="visit" className="py-16 sm:py-24" style={{ borderTop: "1px solid var(--line)" }}>
+    <footer id="visit" className="py-4 sm:py-24" style={{ borderTop: "1px solid var(--line)" }}>
       <p className="text-2xl font-black uppercase tracking-tight" style={{ color: "var(--ink)" }}>
         {nav.visit}
       </p>
