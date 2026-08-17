@@ -78,23 +78,62 @@ export function MenuCarousel({
       onBlur={() => setPaused(false)}
     >
       {slideCount > 0 ? (
-        <div
-          className={`relative aspect-[4/3] w-full ${photoOnRight ? "lg:order-last" : ""}`}
-        >
-          {slides.map((slide, i) => (
-            // aria-hidden goes on a wrapper, not Photo — the inactive slides
-            // stay mounted for the crossfade, and without this a screen
-            // reader would announce every dish's alt text at once.
-            <div
-              key={slide.name}
-              aria-hidden={i !== active}
-              className={`absolute inset-0 ${
-                reducedMotion ? "" : "transition-opacity duration-700 ease-out"
-              } ${i === active ? "opacity-100" : "pointer-events-none opacity-0"}`}
-            >
-              <Photo {...slide.photo} rounded className="h-full w-full" />
+        <div className={photoOnRight ? "lg:order-last" : ""}>
+          <div className="relative aspect-[4/3] w-full">
+            {slides.map((slide, i) => (
+              // aria-hidden goes on a wrapper, not Photo — the inactive slides
+              // stay mounted for the crossfade, and without this a screen
+              // reader would announce every dish's alt text at once.
+              <div
+                key={slide.name}
+                aria-hidden={i !== active}
+                className={`absolute inset-0 ${
+                  reducedMotion ? "" : "transition-opacity duration-700 ease-out"
+                } ${i === active ? "opacity-100" : "pointer-events-none opacity-0"}`}
+              >
+                <Photo {...slide.photo} rounded className="h-full w-full" />
+              </div>
+            ))}
+          </div>
+
+          {/* Diamonds, not dots: the site's decorative motif is already a
+              diamond (DiamondGrid), and docs/02-desain.md rules out fully
+              rounded shapes. Without this the photo gives no sign it moves
+              or responds — the names beside it are the primary control, but
+              nothing points at them. */}
+          {slideCount > 1 ? (
+            <div className="mt-4 flex items-center gap-2.5">
+              {slides.map((slide, i) => (
+                <button
+                  key={slide.name}
+                  type="button"
+                  onClick={() => {
+                    setActive(i);
+                    setTakenOver(true);
+                  }}
+                  aria-label={`Show ${slide.name}`}
+                  aria-current={i === active}
+                  // Hit area is 24px square; the diamond inside is 8px.
+                  className="grid size-6 cursor-pointer place-items-center"
+                >
+                  {/* Two signals, not one: the active diamond is both the
+                      accent colour and a size larger, so it still reads at a
+                      glance and doesn't rely on colour alone. */}
+                  <span
+                    className={`rotate-45 transition-all duration-300 ${
+                      i === active ? "size-2.5" : "size-2"
+                    }`}
+                    style={{
+                      background:
+                        i === active
+                          ? "var(--accent)"
+                          : "color-mix(in srgb, var(--ink-muted) 45%, transparent)",
+                    }}
+                  />
+                </button>
+              ))}
             </div>
-          ))}
+          ) : null}
         </div>
       ) : null}
 
