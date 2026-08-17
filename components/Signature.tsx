@@ -24,9 +24,14 @@ export function Signature() {
         className="mt-5 max-w-2xl text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
         style={{ color: "var(--ink)" }}
       >
-        {menu.length} Categories.
+        {/* Only the numerals take --accent. At this size (36–60px, black
+            weight) accent clears AA Large comfortably; the same colour on the
+            small counters elsewhere would not — see docs/03-konvensi.md. */}
+        <span style={{ color: "var(--accent)" }}>{menu.length}</span> Categories.
         <br />
-        <span className="block whitespace-nowrap pl-8 sm:pl-12 lg:pl-0">{totalItems} Dishes</span>
+        <span className="block whitespace-nowrap pl-8 sm:pl-12 lg:pl-0">
+          <span style={{ color: "var(--accent)" }}>{totalItems}</span> Dishes
+        </span>
       </p>
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">

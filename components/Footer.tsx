@@ -51,7 +51,7 @@ export function Footer() {
               <Link
                 key={section.id}
                 href={`#${section.id}`}
-                className="block hover:opacity-70"
+                className="block transition-opacity duration-200 hover:opacity-70"
                 style={{ color: "var(--ink-muted)" }}
               >
                 {section.name}
@@ -69,7 +69,7 @@ export function Footer() {
               <a
                 key={d.name}
                 href={d.url}
-                className="block hover:opacity-70"
+                className="block transition-opacity duration-200 hover:opacity-70"
                 style={{ color: "var(--ink-muted)" }}
               >
                 {d.name}
@@ -96,7 +96,7 @@ export function Footer() {
                   href={c.url}
                   aria-label={c.name}
                   title={c.name}
-                  className="grid size-11 place-items-center rounded-full border hover:opacity-70"
+                  className="grid size-11 place-items-center rounded-full border transition-opacity duration-200 hover:opacity-70"
                   style={{ borderColor: "var(--line)", color: "var(--ink)" }}
                 >
                   <Icon className="size-5" />

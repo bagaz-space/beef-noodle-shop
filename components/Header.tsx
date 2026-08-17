@@ -36,7 +36,7 @@ export function Header() {
           style={{ color: "var(--ink)" }}
         >
           {NAV_LINKS.map(([label, href]) => (
-            <Link key={href} href={href} className="hover:opacity-70">
+            <Link key={href} href={href} className="transition-opacity duration-200 hover:opacity-70">
               {label}
             </Link>
           ))}
