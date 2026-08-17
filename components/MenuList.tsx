@@ -9,7 +9,9 @@ export function MenuList() {
         {nav.menu}
       </p>
 
-      <div className="mt-8 space-y-6">
+      {/* Wider gaps than the old photo-background bands needed: these are airy
+          text-and-photo spreads now, and would run together at the old spacing. */}
+      <div className="mt-10 space-y-16 sm:space-y-24">
         {menu.map((section, i) => (
           <MenuCategory
             key={section.id}
