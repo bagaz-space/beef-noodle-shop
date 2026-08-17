@@ -1,5 +1,4 @@
 import { menu, nav } from "@/lib/content";
-import { CATEGORY_PHOTOS } from "@/lib/menuPhotos";
 import { MenuCategory } from "./MenuCategory";
 
 export function MenuList() {
@@ -18,7 +17,6 @@ export function MenuList() {
             section={section}
             index={i + 1}
             total={menu.length}
-            photo={CATEGORY_PHOTOS[section.id]}
           />
         ))}
       </div>

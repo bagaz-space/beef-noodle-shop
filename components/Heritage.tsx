@@ -1,11 +1,15 @@
 import { story } from "@/lib/content";
-import { DiamondGrid } from "./DiamondGrid";
 import { Photo } from "./Photo";
 
-/** Mid-page photo band: the shop's opening era and lineage. */
+/**
+ * Mid-page photo band: the shop's opening era and lineage, flanked by the two
+ * photos that carry it — the founding family on one side, the sourcing the
+ * text names on the other. The DiamondGrid that used to close this row moved
+ * out to make room for the second photo; it still appears in Hero and Footer.
+ */
 export function Heritage() {
   return (
-    <section className="grid items-center gap-10 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:grid-cols-[24rem_1fr_11rem] lg:gap-12">
+    <section className="grid items-center gap-10 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:grid-cols-[20rem_1fr_20rem] lg:gap-12">
       {/* Real photo from the client: two generations preparing food
           together — the family tradition the narrative in Values.tsx
           describes. No caption yet — pending, see Photo.tsx for how the
@@ -35,7 +39,15 @@ export function Heritage() {
         </p>
       </div>
 
-      <DiamondGrid className="mx-auto hidden lg:grid" />
+      {/* Real photo from the client. Gives the sourcing line above it
+          something to stand on — until now "Australian beef · soup bone ·
+          quality pork" was an unillustrated claim. */}
+      <Photo
+        src="/menu/aussie-beef.jpg"
+        alt="Cuts of Australian beef being trimmed on a board, beside star anise and cinnamon"
+        rounded
+        className="h-[18rem] w-full sm:h-[22rem] lg:h-[24rem]"
+      />
     </section>
   );
 }

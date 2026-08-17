@@ -1,5 +1,5 @@
 import type { MenuSection } from "@/lib/content";
-import { Photo } from "./Photo";
+import { MenuCarousel } from "./MenuCarousel";
 
 /**
  * A category reads as a spread: the item list on the page's own cream ground,
@@ -12,74 +12,42 @@ import { Photo } from "./Photo";
  * photo rather than the photo being dimmed under the text — the same call
  * already made for the Heritage photo.
  *
- * The photo alternates sides per category so four stacked categories read as a
- * rhythm instead of four identical rows.
+ * The interactive photo/list pair lives in MenuCarousel, a client component;
+ * this stays on the server so the heading doesn't ship with it.
  */
 export function MenuCategory({
   section,
   index,
   total,
-  photo,
 }: {
   section: MenuSection;
   index: number;
   total: number;
-  photo?: { src: string; alt: string; credit?: string; caption?: string };
 }) {
   const counter = `${String(index).padStart(2, "0")}/${String(total).padStart(2, "0")}`;
-  // `index` is 1-based. The photo sits first in the DOM (so on mobile it leads
-  // the category, magazine-style); on wide screens every second one is pushed
-  // to the right instead.
+  // `index` is 1-based. Every second category flips the photo to the right on
+  // wide screens, so four stacked spreads read as a rhythm rather than four
+  // identical rows.
   const photoOnRight = index % 2 === 0;
 
   return (
-    <div
-      id={section.id}
-      className={`grid items-center gap-8 lg:gap-14 ${photo ? "lg:grid-cols-2" : ""}`}
-      style={{ scrollMarginTop: "6rem" }}
-    >
-      {photo ? (
-        <Photo
-          {...photo}
-          rounded
-          className={`aspect-[4/3] w-full ${photoOnRight ? "lg:order-last" : ""}`}
-        />
-      ) : null}
-
-      <div>
-        <p className="text-sm" style={{ color: "var(--ink-muted)" }}>
-          {counter}
-        </p>
-        <h3
-          className="mt-2 text-2xl font-black uppercase leading-tight tracking-tight sm:text-3xl"
-          style={{ color: "var(--ink)" }}
-        >
-          {section.name}
-        </h3>
-        <p className="mt-1 text-sm" style={{ color: "var(--ink-muted)" }}>
-          {section.chinese}
-        </p>
-
-        <div className="mt-8 border-t" style={{ borderColor: "var(--line)" }}>
-          {section.items.map((item) => (
-            <div
-              key={item.name}
-              className="border-b py-5 text-sm"
-              style={{ borderColor: "var(--line)" }}
-            >
-              <p className="uppercase tracking-tight" style={{ color: "var(--ink)" }}>
-                {item.name} <span style={{ color: "var(--ink-muted)" }}>{item.chinese}</span>
-              </p>
-              <p
-                className="mt-1.5 text-[13px] leading-relaxed"
-                style={{ color: "var(--ink-muted)" }}
-              >
-                {item.description}
-              </p>
-            </div>
-          ))}
+    <div id={section.id} style={{ scrollMarginTop: "6rem" }}>
+      <MenuCarousel items={section.items} photoOnRight={photoOnRight}>
+        <div className="mb-8">
+          <p className="text-sm" style={{ color: "var(--ink-muted)" }}>
+            {counter}
+          </p>
+          <h3
+            className="mt-2 text-2xl font-black uppercase leading-tight tracking-tight sm:text-3xl"
+            style={{ color: "var(--ink)" }}
+          >
+            {section.name}
+          </h3>
+          <p className="mt-1 text-sm" style={{ color: "var(--ink-muted)" }}>
+            {section.chinese}
+          </p>
         </div>
-      </div>
+      </MenuCarousel>
     </div>
   );
 }

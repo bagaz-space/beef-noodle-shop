@@ -1,5 +1,5 @@
 import { labels, menu } from "@/lib/content";
-import { CATEGORY_PHOTOS } from "@/lib/menuPhotos";
+import { ITEM_PHOTOS } from "@/lib/menuPhotos";
 import { Photo } from "./Photo";
 
 const totalItems = menu.reduce((sum, section) => sum + section.items.length, 0);
@@ -36,17 +36,10 @@ export function Signature() {
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">
         <div>
-          {/* Real photo from the client, specific to this dish (not the
-              shared per-category CATEGORY_PHOTOS — Sides' category photo
-              is already Vegetables, used in the Menu section). Caption
-              from the client's own Instagram post ("New Drop Pork Chop —
-              Crispy. Juicy. Golden"). */}
           <Photo
-            src="/menu/crispy-pork-chop.jpg"
-            alt="Crispy fried pork chop held with chopsticks, steaming hot"
+            {...ITEM_PHOTOS[porkChop.name]}
             rounded
             zoom={1.3}
-            caption="Crispy. Juicy. Golden."
             className="h-64 w-full sm:h-80"
           />
           <div>
@@ -61,7 +54,7 @@ export function Signature() {
 
         <div>
           <Photo
-            {...CATEGORY_PHOTOS["beef-noodles"]}
+            {...ITEM_PHOTOS[beef.name]}
             rounded
             zoom={1.2}
             className="h-[26rem] w-full sm:h-[30rem]"
@@ -77,7 +70,7 @@ export function Signature() {
         </div>
 
         <div>
-          <Photo {...CATEGORY_PHOTOS.rice} rounded zoom={1.2} className="h-64 w-full sm:h-80" />
+          <Photo {...ITEM_PHOTOS[rice.name]} rounded zoom={1.2} className="h-64 w-full sm:h-80" />
           <div>
             <p className="mt-1 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
               {rice.name} <span style={{ color: "var(--ink-muted)" }}>{rice.chinese}</span>
