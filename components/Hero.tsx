@@ -25,7 +25,7 @@ export function Hero() {
         >
           {taglineLead},
           <br />
-          <span className="whitespace-nowrap">{taglineRest}</span>
+          <span className="block whitespace-nowrap pl-8 sm:pl-12 lg:pl-16">{taglineRest}</span>
         </p>
       </div>
 
