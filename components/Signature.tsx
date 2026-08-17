@@ -24,7 +24,9 @@ export function Signature() {
         className="mt-5 max-w-2xl text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
         style={{ color: "var(--ink)" }}
       >
-        {menu.length} Categories · {totalItems} Dishes
+        {menu.length} Categories.
+        <br />
+        <span className="block whitespace-nowrap pl-8 sm:pl-12 lg:pl-16">{totalItems} Dishes</span>
       </p>
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">

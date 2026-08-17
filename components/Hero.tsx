@@ -20,7 +20,7 @@ export function Hero() {
         </div>
 
         <p
-          className="text-4xl font-black uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
+          className="text-4xl font-black uppercase leading-[1.10] tracking-tight sm:text-5xl lg:text-6xl"
           style={{ color: "var(--ink)" }}
         >
           {taglineLead},

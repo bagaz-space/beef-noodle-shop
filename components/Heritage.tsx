@@ -9,11 +9,11 @@ export function Heritage() {
       {/* Real photo from the client: two generations preparing food
           together — the family tradition the narrative in Values.tsx
           describes. No caption yet — pending, see Photo.tsx for how the
-          label behaves once one arrives. */}
+          label behaves once one arrives. No `dark` filter — per client
+          feedback, the darkening layer was hiding the photo. */}
       <Photo
         src="/story/family-tradition.jpg"
         alt="Two generations preparing food together in the kitchen, grinding spices and wrapping dumplings by hand"
-        dark
         rounded
         className="h-[22rem] w-full sm:h-[26rem] lg:h-[28rem]"
       />
