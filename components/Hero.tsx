@@ -3,6 +3,11 @@ import { DiamondGrid } from "./DiamondGrid";
 import { OutlineMark } from "./OutlineMark";
 import { Photo } from "./Photo";
 
+// Forced break after the comma, per the client's revision: "Good food," on
+// its own line, "better mood." on the next — never left to wrap wherever
+// the container happens to run out of room.
+const [taglineLead, taglineRest] = brand.tagline.en.split(", ");
+
 export function Hero() {
   return (
     <section id="home" className="pt-12 sm:pt-20">
@@ -18,7 +23,9 @@ export function Hero() {
           className="text-4xl font-black uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
           style={{ color: "var(--ink)" }}
         >
-          {brand.tagline.en}
+          {taglineLead},
+          <br />
+          <span className="whitespace-nowrap">{taglineRest}</span>
         </p>
       </div>
 
