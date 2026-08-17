@@ -58,9 +58,8 @@ export function Story() {
           src="/menu/classic-beef-noodles.jpg"
           alt="A bowl of the shop's classic beef noodles"
           rounded
-          zoom={1.10}
           caption="A bowl that tells a story."
-          className="aspect-[4/3] w-full"
+          className="aspect-[3/2] w-full"
         />
       </div>
     </section>
