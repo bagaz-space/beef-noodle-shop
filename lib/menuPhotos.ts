@@ -9,7 +9,7 @@
  * components/Photo.tsx). No `credit` means it's a real photo from the
  * client; `caption` on those is the client's own copy (see
  * konten-baru/foto/README.md for the full text each short caption is drawn
- * from) — `sides` is still the Unsplash stand-in and has no caption yet.
+ * from). All four categories now have a real photo.
  */
 export const CATEGORY_PHOTOS: Record<
   string,
@@ -26,9 +26,9 @@ export const CATEGORY_PHOTOS: Record<
     caption: "A Taiwanese classic done right.",
   },
   sides: {
-    src: "https://images.unsplash.com/photo-1781785164696-0154e4dd70c1?auto=format&fit=crop&w=1800&q=80",
-    alt: "Reference: steamed gua bao bun with pork belly — stand-in for the shop's own bao",
-    credit: "Unsplash",
+    src: "/menu/vegetables.jpg",
+    alt: "Lightly cooked greens topped with fragrant garlic oil",
+    caption: "Every great bowl needs balance.",
   },
   sweet: {
     src: "/menu/plum-dessert.jpg",

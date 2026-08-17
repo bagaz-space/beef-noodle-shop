@@ -6,11 +6,11 @@ const totalItems = menu.reduce((sum, section) => sum + section.items.length, 0);
 
 /*
  * A spread across categories rather than a "Best Sellers" claim: there's no
- * sales data to back that, so this shows gua bao, the flagship beef noodle
- * bowl (larger, with its own description), and lu rou fan instead. No
- * prices, per the client's request.
+ * sales data to back that, so this shows a sides dish, the flagship beef
+ * noodle bowl (larger, with its own description), and lu rou fan instead.
+ * No prices, per the client's request.
  */
-const gua = menu.find((s) => s.id === "sides")!.items[0];
+const sides = menu.find((s) => s.id === "sides")!.items[0];
 const beef = menu.find((s) => s.id === "beef-noodles")!.items[0];
 const rice = menu.find((s) => s.id === "rice")!.items[0];
 
@@ -31,7 +31,7 @@ export function Signature() {
         <div>
           <Photo {...CATEGORY_PHOTOS.sides} rounded zoom={1.2} className="h-64 w-full sm:h-80" />
           <p className="mt-5 text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
-            {gua.name} <span style={{ color: "var(--ink-muted)" }}>{gua.chinese}</span>
+            {sides.name} <span style={{ color: "var(--ink-muted)" }}>{sides.chinese}</span>
           </p>
         </div>
 

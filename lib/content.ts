@@ -243,10 +243,18 @@ export const menu: MenuSection[] = [
     name: "Sides",
     chinese: "小菜",
     items: [
+      /**
+       * Real — name, description and photo all sourced from the client's
+       * own Instagram post (@thebeefnoodleshop, "Vegetables! Every great
+       * bowl needs balance..."). Chinese name and price are still
+       * PLACEHOLDER like the rest of this array — the post didn't include
+       * either (刈包 was the old Gua Bao placeholder's Chinese name, wrong
+       * for this dish — replaced).
+       */
       {
-        name: "Gua Bao",
-        chinese: "刈包",
-        description: "Steamed bun, braised pork belly, peanut, coriander.",
+        name: "Vegetables",
+        chinese: "蒜香油菜",
+        description: "Fresh greens, lightly cooked and topped with fragrant garlic oil.",
         price: 9.9,
       },
     ],
@@ -257,15 +265,15 @@ export const menu: MenuSection[] = [
     chinese: "甜品・饮料",
     items: [
       {
-        name: "Shaved Ice",
+        name: "Shaved Plum Dessert",
         chinese: "剉冰",
         description: "Seasonal fruit, condensed milk.",
         price: 13.9,
       },
       {
-        name: "Plum Juice",
+        name: "Plum Drink",
         chinese: "酸梅汤",
-        description: "Sour, cold, cuts through the broth.",
+        description: "Sweet, Tangy, Refreshing.",
         price: 7.9,
       },
     ],
