@@ -122,7 +122,8 @@ kepribadian dan bukan brand kartun:
   Paper Cream sementara `--accent` 4.35:1, jadi karakter adalah hal paling
   kontras di halaman. Hindari menaruhnya tepat di sebelah teks ber-`--accent` —
   dua merah yang beda tipis terbaca meleset, bukan berpasangan. Satu-satunya
-  tempat itu terjadi sekarang adalah Signature.
+  tempat itu sempat terjadi adalah Signature, dan karakternya sudah dipindah ke
+  tepi kanan section supaya berjarak dari angka ber-`--accent`.
 - **Tidak di bawah ~72px** (`w-18`). Di bawah itu wajahnya lumer.
 - **Jangan dipetakan ke makanan.** Kesebelasnya bertema sapi, mi, dan mangkuk,
   sementara kategori menunya termasuk Rice, Sides, dan Sweet & Drinks. Karakter

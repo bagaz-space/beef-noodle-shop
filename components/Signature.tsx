@@ -21,7 +21,7 @@ export function Signature() {
       <p className="text-xs uppercase tracking-[0.2em]" style={{ color: "var(--ink-muted)" }}>
         {labels.signature}
       </p>
-      <div className="flex items-end gap-8">
+      <div className="flex items-start justify-between gap-8">
       <p
         className="mt-5 max-w-2xl text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
         style={{ color: "var(--ink)" }}
@@ -35,9 +35,13 @@ export function Signature() {
           <span style={{ color: "var(--accent)" }}>{totalItems}</span> Dishes
         </span>
       </p>
-        {/* Hidden below sm: the headline's second line is whitespace-nowrap,
+        {/* Pushed to the section's right margin, away from the accent
+            numerals: two near-but-not-equal reds side by side read as a miss
+            rather than a pair.
+
+            Hidden below sm — the headline's second line is whitespace-nowrap,
             so a flex sibling at 390px risks forcing horizontal overflow. */}
-        <Character name="slurp" className="hidden w-20 shrink-0 sm:block sm:w-28" />
+        <Character name="slurp" className="hidden w-20 shrink-0 sm:block sm:w-32 lg:w-44" />
       </div>
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">
