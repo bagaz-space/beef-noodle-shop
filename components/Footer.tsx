@@ -47,15 +47,9 @@ export function Footer() {
         </div>
 
         <div>
-          {/* 36px, not the 14px of the label beside it. At true text size
-              these illustrations are a red smudge rather than a cow — they
-              only start reading as one around here. */}
-          <div className="flex items-center gap-2.5">
-            <p className="text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
-              {nav.menu}
-            </p>
-            <Character name="slurp" className="w-9 shrink-0" />
-          </div>
+          <p className="text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
+            {nav.menu}
+          </p>
           <div className="mt-6 space-y-3 text-xs uppercase tracking-tight">
             {menu.map((section) => (
               <Link
@@ -71,12 +65,9 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="flex items-center gap-2.5">
-            <p className="text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
-              {labels.delivery}
-            </p>
-            <Character name="takeaway" className="w-9 shrink-0" />
-          </div>
+          <p className="text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
+            {labels.delivery}
+          </p>
           <div className="mt-6 space-y-3 text-xs uppercase tracking-tight">
             {delivery.map((d) => (
               <a
