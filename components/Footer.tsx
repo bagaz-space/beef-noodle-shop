@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import Link from "next/link";
 import { brand, contact, delivery, labels, menu, nav, outlet } from "@/lib/content";
+import { Character } from "./Character";
 import { DiamondGrid } from "./DiamondGrid";
 import { FacebookLogo, GmailLogo, InstagramLogo, WhatsAppLogo } from "./icons";
 
@@ -40,7 +41,13 @@ export function Footer() {
       </div>
 
       <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-        <DiamondGrid className="self-end" />
+        {/* --ink, not accent: the footer already carries heavy visual weight
+            and the brief wants the closing note calm — the same reason the
+            DiamondGrid below it stays untinted here. */}
+        <div className="flex flex-col items-start justify-end gap-8">
+          <Character name="noodle-wrap" tone="var(--ink)" className="w-28 sm:w-40" />
+          <DiamondGrid />
+        </div>
 
         <div>
           <p className="text-sm uppercase tracking-tight" style={{ color: "var(--ink)" }}>
