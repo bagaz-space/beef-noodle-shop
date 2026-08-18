@@ -212,7 +212,34 @@ adalah satu-satunya penjaga di sini.
 
 ---
 
-## Langkah 4 — InfoStrip `takeaway` *(boleh gagal)*
+## Langkah 4 — InfoStrip `takeaway` — DICOBA, DIBUANG
+
+**Hasil: tidak jadi dikirim.** Dipasang di dalam blok Delivery, diukur, dan
+gagal dua dari tiga kriteria yang ditulis di bawah:
+
+| Kriteria | Baseline | Dengan karakter | |
+| --- | --- | --- | --- |
+| Kolom sejajar di 1440px | semua `top=41` | semua `top=41` | lolos |
+| Tinggi strip di 1440px | 197px | 241px | **gagal** |
+| Tinggi strip di 390px | 479px | 575px (+20%) | **gagal** |
+
+Screenshot mengonfirmasi angkanya: strip itu satu baris rapi berisi empat blok
+teks kecil dengan ikon 20px, dan karakter 96px menggantung di bawah salah
+satunya membuat kolom itu timpang sekaligus meninggalkan ruang mati di bawah
+tiga kolom lainnya. Terbaca sebagai elemen nyasar, bukan yang ditempatkan.
+
+Akar masalahnya struktural, bukan soal ukuran: strip ini `lg:grid-cols-4`, jadi
+karakternya tidak punya tempat selain di dalam salah satu sel — dan tiap sel
+dirancang untuk teks kecil fungsional. Mengecilkan karakter tidak
+menyelesaikannya; di bawah 72px wajahnya lumer.
+
+`components/InfoStrip.tsx` dikembalikan utuh; baseline terukur pulih persis.
+Empat penempatan yang tersisa berdiri sendiri dengan baik. **Jangan diulang
+tanpa struktur yang benar-benar menyediakan ruang untuknya.**
+
+<details>
+<summary>Rencana asli langkah ini (disimpan sebagai catatan)</summary>
+
 
 `components/InfoStrip.tsx`, di tepi strip dekat blok Delivery.
 
@@ -237,6 +264,8 @@ dinilai lewat screenshot, dibuang. Kalau dibuang, catat di dokumen ini seperti
 di sana, jangan hapus jejaknya.
 
 **Commit:** `InfoStrip: takeaway character` — atau tidak sama sekali.
+
+</details>
 
 ---
 
