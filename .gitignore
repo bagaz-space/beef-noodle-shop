@@ -45,3 +45,6 @@ next-env.d.ts
 
 # raw client content staging — real business info/photos, repo is public
 /konten-baru/
+
+.vercel
+.env*
