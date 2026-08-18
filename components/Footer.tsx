@@ -100,8 +100,11 @@ export function Footer() {
                   href={c.url}
                   aria-label={c.name}
                   title={c.name}
-                  className="grid size-11 place-items-center rounded-full border transition-opacity duration-200 hover:opacity-70"
-                  style={{ borderColor: "var(--line)", color: "var(--ink)" }}
+                  // size-11 stays without the border: the 44x44 touch target
+                  // is the requirement (docs/03-konvensi.md), the circle round
+                  // it was only decoration.
+                  className="grid size-11 place-items-center transition-opacity duration-200 hover:opacity-70"
+                  style={{ color: "var(--ink)" }}
                 >
                   <Icon className="size-5" />
                 </a>
