@@ -82,13 +82,26 @@ public/
   tidak pernah lewat `<img>` langsung. `<img>` akan mengunci warnanya di hex
   bawaan file dan lepas dari sistem token; `Character` mewarnainya lewat CSS
   mask sehingga warnanya tetap datang dari token.
-- **Video jangan di-autoplay.** `public/story/origin-story.mp4` berukuran 6,3MB
-  dan direkam vertikal 720x1280 untuk sosial media. Dipasang dengan
-  `preload="none"` + poster, jadi mpeg-nya baru diunduh kalau pengunjung
-  menekan play — terverifikasi hanya poster 155KB yang ikut saat halaman
-  dimuat. Diputar di rasio aslinya 9:16, tidak di-crop: crop ke 16:9 hanya
-  menyisakan ~31% frame dan memotong subtitle yang terbakar di sepertiga
-  bawahnya.
+- **Video autoplay — atas permintaan klien, dan ada ongkosnya.**
+  `public/story/origin-story.mp4` berukuran 6,3MB, direkam vertikal 720x1280
+  untuk sosial media, diputar di `components/OriginVideo.tsx`. Diputar di rasio
+  aslinya 9:16, tidak pernah di-crop: crop ke 16:9 hanya menyisakan ~31% frame
+  dan memotong subtitle yang terbakar di sepertiga bawahnya.
+
+  Tiga konsekuensi yang saling terkait, jangan diubah salah satunya sendirian:
+  **wajib `muted`** (semua browser memblokir autoplay bersuara), **6,3MB
+  terunduh di tiap page load** termasuk di HP — `preload="none"` tidak mungkin
+  berbarengan dengan autoplay, dan **`loop` wajib** karena di desktop tidak ada
+  kontrol untuk mengulang.
+
+  `controls` hanya muncul di bawah 1024px. Karena itu atribut HTML dan bukan
+  class, breakpoint-nya dibaca lewat JS — itu satu-satunya alasan komponen ini
+  `"use client"`.
+
+  **`prefers-reduced-motion` di sini bukan pemanis.** WCAG 2.2.2 meminta gerak
+  yang berjalan lebih dari lima detik bisa dihentikan, sementara di desktop
+  video ini tidak punya kontrol terlihat sama sekali. Untuk yang menyalakan
+  preferensi itu di OS-nya: tidak autoplay, dan controls dimunculkan.
 - Empat dari 11 karakter belum dipakai (`bowl-head`, `dive`, `paper-plane`,
   `takeaway`). Sengaja disimpan sebagai opsi untuk klien, dan sudah terdaftar di
   union `CharacterName`.

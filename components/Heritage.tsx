@@ -1,4 +1,5 @@
 import { story } from "@/lib/content";
+import { OriginVideo } from "./OriginVideo";
 import { Photo } from "./Photo";
 
 /**
@@ -46,33 +47,7 @@ export function Heritage() {
         </p>
       </div>
 
-      {/*
-       * The client's origin-story video, in place of the sourcing photo that
-       * used to sit here. Shot vertical for social (720x1280) and played at
-       * its own 9:16 rather than cropped: a landscape crop would keep ~31% of
-       * the frame and cut through the subtitles burned into its lower third.
-       *
-       * Never autoplayed, and preload="none": the file is 6.3MB and plenty of
-       * people open this on mall wifi, so nothing but the poster loads until
-       * someone presses play. The poster is the video's own opening card, so
-       * the still frame already says what it is.
-       */}
-      <figure className="m-0">
-        <video
-          controls
-          preload="none"
-          playsInline
-          poster="/story/origin-story-poster.jpg"
-          aria-label={story.videoCaption}
-          className="aspect-[9/16] w-full rounded-lg object-cover"
-          style={{ background: "var(--ground-alt)" }}
-        >
-          <source src="/story/origin-story.mp4" type="video/mp4" />
-        </video>
-        <figcaption className="mt-3 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-          {story.videoCaption}
-        </figcaption>
-      </figure>
+      <OriginVideo />
     </section>
   );
 }
