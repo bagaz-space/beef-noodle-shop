@@ -42,7 +42,7 @@ export function Footer() {
 
       <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col items-start justify-end gap-8">
-          <Character name="noodle-wrap" className="w-28 sm:w-40" />
+          <Character name="bowl" className="w-28 sm:w-40" />
           <DiamondGrid />
         </div>
 

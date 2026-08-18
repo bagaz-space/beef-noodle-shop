@@ -13,7 +13,7 @@ import { MenuCarousel } from "./MenuCarousel";
  * Keyed by index, not picked at random: a real random pick would differ
  * between the server and client renders and break hydration.
  */
-const CATEGORY_CHARACTERS: CharacterName[] = ["bowl", "chopsticks", "lounge", "wink"];
+const CATEGORY_CHARACTERS: CharacterName[] = ["noodle-wrap", "chopsticks", "lounge", "wink", "bowl-head", "dive", "takeaway", "paper-plane", "chef", "bowl"];
 
 /**
  * A category reads as a spread: the item list on the page's own cream ground,

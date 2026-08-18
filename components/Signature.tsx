@@ -21,7 +21,6 @@ export function Signature() {
       <p className="text-xs uppercase tracking-[0.2em]" style={{ color: "var(--ink-muted)" }}>
         {labels.signature}
       </p>
-      <div className="flex items-start justify-between gap-8">
       <p
         className="mt-5 max-w-2xl text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl"
         style={{ color: "var(--ink)" }}
@@ -41,11 +40,20 @@ export function Signature() {
 
             Hidden below sm — the headline's second line is whitespace-nowrap,
             so a flex sibling at 390px risks forcing horizontal overflow. */}
-        <Character name="slurp" className="hidden w-20 shrink-0 sm:block sm:w-32 lg:w-44" />
-      </div>
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">
         <div>
+          {/* Sits in the empty space above this column, which is the shorter
+              of the three and bottom-aligned with the tall middle one.
+              In flow rather than absolutely placed, so it can't overlap the
+              headline once the grid collapses to one column below lg.
+
+              It fits in that gap on a budget: at lg the row is as tall as the
+              middle column, and this cell has ~188px of slack. Character
+              (144px) plus its margin (24px) stays under that, so the photos
+              below do not move. Grow it past the budget and the whole row
+              grows with it. */}
+          <Character name="dive" className="mb-6 w-24 sm:w-28 lg:w-36" />
           <Photo
             {...ITEM_PHOTOS[porkChop.name]}
             rounded
