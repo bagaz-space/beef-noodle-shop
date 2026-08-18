@@ -59,7 +59,8 @@ lib/
 docs/                 brief, sistem desain, konvensi (dokumen ini)
 scripts/              build guard placeholder
 public/
-  menu/ story/         foto
+  menu/                foto hidangan
+  story/               foto + video origin story dari klien
   character/           11 ilustrasi sapi dari klien
 ```
 
@@ -81,6 +82,13 @@ public/
   tidak pernah lewat `<img>` langsung. `<img>` akan mengunci warnanya di hex
   bawaan file dan lepas dari sistem token; `Character` mewarnainya lewat CSS
   mask sehingga warnanya tetap datang dari token.
+- **Video jangan di-autoplay.** `public/story/origin-story.mp4` berukuran 6,3MB
+  dan direkam vertikal 720x1280 untuk sosial media. Dipasang dengan
+  `preload="none"` + poster, jadi mpeg-nya baru diunduh kalau pengunjung
+  menekan play — terverifikasi hanya poster 155KB yang ikut saat halaman
+  dimuat. Diputar di rasio aslinya 9:16, tidak di-crop: crop ke 16:9 hanya
+  menyisakan ~31% frame dan memotong subtitle yang terbakar di sepertiga
+  bawahnya.
 - Empat dari 11 karakter belum dipakai (`bowl-head`, `dive`, `paper-plane`,
   `takeaway`). Sengaja disimpan sebagai opsi untuk klien, dan sudah terdaftar di
   union `CharacterName`.

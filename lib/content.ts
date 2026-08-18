@@ -148,6 +148,13 @@ export const story = {
   era: "1980s",
   pullQuote:
     "We didn't invent this recipe for a trend cycle. We inherited it, and we're not cutting corners on it.",
+  /**
+   * Caption for the origin-story video in the Story section. Lifted verbatim
+   * from the opening card of the client's own video rather than written here,
+   * so nothing on the page claims something the client didn't say.
+   */
+  videoCaption:
+    "This isn't a new restaurant. It's a story that started over 30 years ago.",
   beats: [
     "In the 1980s, our founder's parents ran a beef noodle shop. The broth had already been simmering for hours before the door was unlocked.",
     "Regulars never needed to look at the menu.",
