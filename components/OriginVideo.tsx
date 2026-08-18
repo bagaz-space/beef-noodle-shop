@@ -63,27 +63,19 @@ export function OriginVideo() {
   }, [reducedMotion]);
 
   return (
-    <figure className="m-0">
-      <video
-        ref={ref}
-        autoPlay={!reducedMotion}
-        muted
-        loop
-        playsInline
-        controls={isMobile || reducedMotion}
-        poster="/story/origin-story-poster.jpg"
-        aria-label={story.videoCaption}
-        className="aspect-[9/16] w-full rounded-lg object-cover"
-        style={{ background: "var(--ground-alt)" }}
-      >
-        <source src="/story/origin-story.mp4" type="video/mp4" />
-      </video>
-      <figcaption
-        className="mt-3 text-sm leading-relaxed"
-        style={{ color: "var(--ink-muted)" }}
-      >
-        {story.videoCaption}
-      </figcaption>
-    </figure>
+    <video
+      ref={ref}
+      autoPlay={!reducedMotion}
+      muted
+      loop
+      playsInline
+      controls={isMobile || reducedMotion}
+      poster="/story/origin-story-poster.jpg"
+      aria-label={story.videoCaption}
+      className="aspect-[9/16] w-full rounded-lg object-cover"
+      style={{ background: "var(--ground-alt)" }}
+    >
+      <source src="/story/origin-story.mp4" type="video/mp4" />
+    </video>
   );
 }

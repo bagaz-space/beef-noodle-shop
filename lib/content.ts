@@ -149,9 +149,11 @@ export const story = {
   pullQuote:
     "We didn't invent this recipe for a trend cycle. We inherited it, and we're not cutting corners on it.",
   /**
-   * Caption for the origin-story video in the Story section. Lifted verbatim
-   * from the opening card of the client's own video rather than written here,
-   * so nothing on the page claims something the client didn't say.
+   * Accessible name for the origin-story video in Heritage. Not shown on the
+   * page — it is what a screen reader announces in place of 35 seconds of
+   * silent footage, which would otherwise be an unlabelled media element.
+   * Lifted verbatim from the opening card of the client's own video rather
+   * than written here.
    */
   videoCaption:
     "This isn't a new restaurant. It's a story that started over 30 years ago.",
