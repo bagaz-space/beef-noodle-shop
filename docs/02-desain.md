@@ -90,3 +90,38 @@ di `docs/01-brief.md`.
 Nol kartu ber-shadow, nol pill rounded penuh, nol CTA lingkaran. Radius yang
 dipakai kecil (`rounded-lg`) dan hanya pada foto — situsnya sebagian besar
 tetap hard-edged.
+
+## Perangkat non-tipografis
+
+Situs ini hampir seluruhnya foto dan tipografi. Yang bukan keduanya cuma empat,
+dan sedikitnya jumlah itu disengaja — tiap perangkat jadi punya bobot:
+
+| Perangkat | Dipakai di | Peran |
+| --- | --- | --- |
+| `OutlineMark` | Hero, sekali | 牛肉面馆 raksasa di atas foto. Keputusan paling penting di sistem ini — lihat bagian di atas. Sengaja **hanya satu instans**; pernah dicoba diulang di Footer dan justru melemahkan aslinya. |
+| `DiamondGrid` | Hero, Footer | Wajik dekoratif, tone campur ink/accent/gold. Gold aman di sini justru karena ini bentuk solid, bukan teks. |
+| `Character` | Story, Menu, Signature, Footer | Ilustrasi sapi dari klien, diwarnai token lewat CSS mask. |
+| Hover-zoom foto | `Photo` | 700ms, sengaja lambat untuk gambar besar. |
+
+Indikator carousel di `MenuCarousel` memakai wajik, bukan titik, supaya
+meminjam motif `DiamondGrid` alih-alih memperkenalkan bentuk baru — sekaligus
+karena bentuk rounded penuh masuk daftar "sengaja tidak dipakai" di atas.
+
+### Batas `Character`
+
+Karakter datang dari klien setelah brief ditulis; lihat catatan "maskot" di
+`docs/01-brief.md`. Batasnya, supaya tetap terbaca sebagai brand yang punya
+kepribadian dan bukan brand kartun:
+
+- **Tidak di Hero, tidak di Heritage.** Hero milik `OutlineMark` sendirian.
+  Heritage memakai foto keluarga asli klien, dan menempeli wajah orang dengan
+  kartun adalah kategori keluhan yang sama dengan lapisan gelap yang sudah
+  pernah ditolak klien.
+- **Tidak pernah warna bawaan file.** Merah `#A50A0A` bawaannya terukur 6.8:1
+  di atas Paper Cream, sementara `--accent` 4.35:1 — dibiarkan apa adanya ia
+  akan berteriak lebih keras dari aksen brand-nya sendiri.
+- **Tidak di bawah ~72px** (`w-18`). Di bawah itu wajahnya lumer.
+- **Hitung aksennya.** Kalau accent berhenti terasa sebagai percikan dan mulai
+  jadi warna dominan, turunkan satu karakter ke `--ink`. Itu sebabnya Signature
+  dan Footer memakai ink.
+- Tanpa animasi.

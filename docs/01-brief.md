@@ -45,6 +45,25 @@ maupun besar (signage).
 estetik (neon-brutalist, Y2K, meme) · mengandalkan kekacauan, gimmick, atau maskot
 · **terlihat mahal/eksklusif sampai merusak posisi "affordable, everyday treat"**.
 
+### Catatan atas "maskot" — Agustus 2026
+
+Klien kemudian mengirim sendiri 11 ilustrasi sapi dan meminta dipakai untuk
+menambah kesan "fun energy". Itu haknya, dan larangan di atas tidak dicabut —
+kata kuncinya selalu **"mengandalkan"**. Yang dilarang adalah menjadikan maskot
+tumpuan identitas, bukan keberadaan ilustrasi itu sendiri.
+
+Batas yang menjaga baris "mark-nya harus tenang dan bisa dipercaya" tetap benar:
+
+- Dekoratif sepenuhnya. `aria-hidden`, tidak pernah jadi satu-satunya pembawa
+  informasi apa pun.
+- Kepadatan rendah. Empat penempatan di seluruh halaman.
+- **Tidak pernah menggantikan mark.** Hero tetap milik `OutlineMark` 牛肉面馆
+  sendirian; Heritage tetap milik foto keluarga asli klien.
+- Diwarnai token, tidak pernah warna bawaan filenya.
+- Tanpa animasi.
+
+Rinciannya di `docs/superpowers/specs/2026-08-18-karakter-ilustrasi-design.md`.
+
 ## Palette awal dari brief
 
 | Token         | Hex       | Peran                                     |

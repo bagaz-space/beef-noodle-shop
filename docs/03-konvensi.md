@@ -58,7 +58,31 @@ lib/
   menuPhotos.ts       URL foto per item menu, dikunci nama item (implementation detail, bukan content)
 docs/                 brief, sistem desain, konvensi (dokumen ini)
 scripts/              build guard placeholder
+public/
+  menu/ story/         foto
+  character/           11 ilustrasi sapi dari klien
 ```
+
+## Aset di `public/`
+
+- **Huruf kecil, kebab-case, tanpa spasi.** Windows tidak peduli soal
+  kapitalisasi, Vercel jalan di Linux yang case-sensitive — nama yang salah
+  akan resolve mulus di lokal dan baru 404 setelah deploy. Spasi juga harus
+  jadi `%20` di URL. Aset karakter dari klien datang bernama
+  `BEEF NOODLE characters-01.svg`; keduanya kena.
+- **Dinamai menurut isinya, bukan nomornya.** `chef.svg`, bukan
+  `character-04.svg`.
+- **Jangan pernah taruh file sumber di `public/`.** Isinya disajikan apa adanya
+  ke internet dan repo ini publik. File `.ai` klien tinggal di
+  `konten-baru/karakter/`, yang sudah gitignored. Urutannya juga penting:
+  sekali file itu masuk satu commit, ia menetap di riwayat Git apa pun yang
+  dilakukan commit berikutnya.
+- **`public/character/*.svg` hanya dirujuk lewat `components/Character.tsx`**,
+  tidak pernah lewat `<img>` langsung. `<img>` akan mengunci warnanya di hex
+  bawaan file dan lepas dari sistem token; `Character` mewarnainya lewat CSS
+  mask sehingga warnanya tetap datang dari token.
+- Tujuh dari 11 karakter belum dipakai. Sengaja disimpan sebagai opsi untuk
+  klien, dan sudah terdaftar di union `CharacterName`.
 
 Tidak ada lagi pemisahan `app/<slug>/_components/` — itu pola dari repo
 perbandingan tiga-arah. Di sini semua komponen sudah "shared" karena cuma ada
