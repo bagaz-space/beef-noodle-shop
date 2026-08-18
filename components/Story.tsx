@@ -1,4 +1,5 @@
 import { nav, story } from "@/lib/content";
+import { Character } from "./Character";
 import { Photo } from "./Photo";
 
 /**
@@ -17,6 +18,9 @@ export function Story() {
     <section id="story" className="py-16 sm:py-20">
       <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
         <div>
+          {/* The chef, above the eyebrow: this section opens the story of a
+              kitchen, and it's the one character whose meaning matches. */}
+          <Character name="chef" className="mb-6 w-20 sm:w-28 lg:w-30" />
           <p className="text-xs uppercase tracking-[0.2em]" style={{ color: "var(--ink-muted)" }}>
             {nav.story}
           </p>
