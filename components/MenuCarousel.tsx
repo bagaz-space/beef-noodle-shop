@@ -78,7 +78,13 @@ export function MenuCarousel({
       onBlur={() => setPaused(false)}
     >
       {slideCount > 0 ? (
-        <div className={photoOnRight ? "lg:order-last" : ""}>
+        /* Slightly narrower than its column, held against the page margin
+           rather than centred. The constraint sits here and not on the photo
+           itself so the indicator row below shrinks with it and stays aligned
+           to the photo's edge. */
+        <div
+          className={`lg:w-11/12 ${photoOnRight ? "lg:order-last lg:ml-auto" : "lg:mr-auto"}`}
+        >
           <div className="relative aspect-[4/3] w-full">
             {slides.map((slide, i) => (
               // aria-hidden goes on a wrapper, not Photo — the inactive slides

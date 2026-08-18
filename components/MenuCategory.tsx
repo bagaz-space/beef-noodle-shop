@@ -60,7 +60,7 @@ export function MenuCategory({
             </h3>
             <Character
               name={CATEGORY_CHARACTERS[(index - 1) % CATEGORY_CHARACTERS.length]}
-              className="w-18 shrink-0 sm:w-20"
+              className="w-20 shrink-0 sm:w-24"
             />
           </div>
           <p className="mt-1 text-sm" style={{ color: "var(--ink-muted)" }}>
