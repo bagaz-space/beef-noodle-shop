@@ -18,9 +18,6 @@ export function Story() {
     <section id="story" className="py-16 sm:py-20">
       <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
         <div>
-          {/* The chef, above the eyebrow: this section opens the story of a
-              kitchen, and it's the one character whose meaning matches. */}
-          <Character name="chef" className="mb-6 w-20 sm:w-28 lg:w-30" />
           <p className="text-xs uppercase tracking-[0.2em]" style={{ color: "var(--ink-muted)" }}>
             {nav.story}
           </p>
@@ -42,7 +39,12 @@ export function Story() {
         </p>
       </div>
 
-      <div className="mt-12 grid gap-8 border-t pt-8 lg:grid-cols-[1fr_24rem] lg:gap-12" style={{ borderColor: "var(--line)" }}>
+      {/* Three blocks: character, beats, photo. The chef used to sit above the
+          eyebrow at the top of the section; down here it shares a row instead
+          of floating alone over the headline. */}
+      <div className="mt-12 grid gap-8 border-t pt-8 lg:grid-cols-[9rem_1fr_24rem] lg:gap-12" style={{ borderColor: "var(--line)" }}>
+        <Character name="chef" className="w-24 self-center sm:w-32 lg:w-full" />
+
         <div className="flex flex-col justify-center divide-y" style={{ borderColor: "var(--line)" }}>
           {facts.map((fact) => (
             <div key={fact.n} className="flex items-start gap-4 py-5 first:pt-0 last:pb-0">

@@ -2,15 +2,13 @@
  * One of the client's cow illustrations, coloured from a token.
  *
  * Coloured with a CSS mask rather than inline SVG or `<img>`. A mask reads
- * only the alpha channel, so the `#A50A0A` baked into the files is irrelevant
- * and the colour can come from a token — while the file itself stays external
- * and cached separately from the HTML. Inlining would push 6–15KB of path data
- * into every page load, uncached; `<img>` would lock the colour outside the
- * token system entirely (see docs/03-konvensi.md).
+ * only the alpha channel, so colour comes from a token while the file stays
+ * external and cached separately from the HTML. Inlining would push 6–15KB of
+ * path data into every page load, uncached.
  *
- * That original red is not a system colour, and not a near miss: it measures
- * 6.8:1 against Paper Cream where `--accent` measures 4.35:1. Left as-is these
- * would out-shout the brand's own accent.
+ * They render in their own red (`--character`) by default, per the client. The
+ * mask is what keeps that a token rather than a hardcoded hex, and it means
+ * repainting all of them is a one-line change if that call is ever revisited.
  *
  * Purely decorative — `aria-hidden`, no alternative text, same as DiamondGrid.
  * Nothing here is the only carrier of any information.
@@ -44,11 +42,11 @@ export type CharacterName =
 export function Character({
   name,
   className = "",
-  tone = "var(--accent)",
+  tone = "var(--character)",
 }: {
   name: CharacterName;
   className?: string;
-  /** Colour token. Defaults to --accent; --ink where the spot needs to stay calm. */
+  /** Colour token. Defaults to --character, the illustrations' own red. */
   tone?: string;
 }) {
   const url = `/character/${name}.svg`;

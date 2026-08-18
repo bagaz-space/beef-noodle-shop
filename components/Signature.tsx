@@ -35,14 +35,9 @@ export function Signature() {
           <span style={{ color: "var(--accent)" }}>{totalItems}</span> Dishes
         </span>
       </p>
-        {/* --ink, not accent like the others. The numerals beside it are the
-            only splash of colour in this section; a 112px accent character
-            right next to them would cancel that out. */}
-        <Character
-          name="slurp"
-          tone="var(--ink)"
-          className="hidden w-20 shrink-0 sm:block sm:w-28"
-        />
+        {/* Hidden below sm: the headline's second line is whitespace-nowrap,
+            so a flex sibling at 390px risks forcing horizontal overflow. */}
+        <Character name="slurp" className="hidden w-20 shrink-0 sm:block sm:w-28" />
       </div>
 
       <div className="mt-16 grid items-end gap-10 lg:grid-cols-[0.75fr_1.2fr_0.75fr]">

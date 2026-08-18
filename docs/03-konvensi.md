@@ -81,8 +81,9 @@ public/
   tidak pernah lewat `<img>` langsung. `<img>` akan mengunci warnanya di hex
   bawaan file dan lepas dari sistem token; `Character` mewarnainya lewat CSS
   mask sehingga warnanya tetap datang dari token.
-- Tujuh dari 11 karakter belum dipakai. Sengaja disimpan sebagai opsi untuk
-  klien, dan sudah terdaftar di union `CharacterName`.
+- Empat dari 11 karakter belum dipakai (`bowl-head`, `dive`, `paper-plane`,
+  `takeaway`). Sengaja disimpan sebagai opsi untuk klien, dan sudah terdaftar di
+  union `CharacterName`.
 
 Tidak ada lagi pemisahan `app/<slug>/_components/` — itu pola dari repo
 perbandingan tiga-arah. Di sini semua komponen sudah "shared" karena cuma ada

@@ -100,7 +100,7 @@ dan sedikitnya jumlah itu disengaja — tiap perangkat jadi punya bobot:
 | --- | --- | --- |
 | `OutlineMark` | Hero, sekali | 牛肉面馆 raksasa di atas foto. Keputusan paling penting di sistem ini — lihat bagian di atas. Sengaja **hanya satu instans**; pernah dicoba diulang di Footer dan justru melemahkan aslinya. |
 | `DiamondGrid` | Hero, Footer | Wajik dekoratif, tone campur ink/accent/gold. Gold aman di sini justru karena ini bentuk solid, bukan teks. |
-| `Character` | Story, Menu, Signature, Footer | Ilustrasi sapi dari klien, diwarnai token lewat CSS mask. |
+| `Character` | Story, tiap kategori menu, Signature, Footer | Ilustrasi sapi dari klien, dirender lewat CSS mask dalam warna aslinya. |
 | Hover-zoom foto | `Photo` | 700ms, sengaja lambat untuk gambar besar. |
 
 Indikator carousel di `MenuCarousel` memakai wajik, bukan titik, supaya
@@ -117,11 +117,14 @@ kepribadian dan bukan brand kartun:
   Heritage memakai foto keluarga asli klien, dan menempeli wajah orang dengan
   kartun adalah kategori keluhan yang sama dengan lapisan gelap yang sudah
   pernah ditolak klien.
-- **Tidak pernah warna bawaan file.** Merah `#A50A0A` bawaannya terukur 6.8:1
-  di atas Paper Cream, sementara `--accent` 4.35:1 — dibiarkan apa adanya ia
-  akan berteriak lebih keras dari aksen brand-nya sendiri.
+- **Warna aslinya, lewat token `--character`.** Klien memilih merah bawaan
+  ilustrasinya dipertahankan. Sadari ongkosnya: `#A50A0A` terukur 6.8:1 di atas
+  Paper Cream sementara `--accent` 4.35:1, jadi karakter adalah hal paling
+  kontras di halaman. Hindari menaruhnya tepat di sebelah teks ber-`--accent` —
+  dua merah yang beda tipis terbaca meleset, bukan berpasangan. Satu-satunya
+  tempat itu terjadi sekarang adalah Signature.
 - **Tidak di bawah ~72px** (`w-18`). Di bawah itu wajahnya lumer.
-- **Hitung aksennya.** Kalau accent berhenti terasa sebagai percikan dan mulai
-  jadi warna dominan, turunkan satu karakter ke `--ink`. Itu sebabnya Signature
-  dan Footer memakai ink.
+- **Jangan dipetakan ke makanan.** Kesebelasnya bertema sapi, mi, dan mangkuk,
+  sementara kategori menunya termasuk Rice, Sides, dan Sweet & Drinks. Karakter
+  per kategori dikunci by index di `MenuCategory.tsx` — dekorasi, bukan label.
 - Tanpa animasi.

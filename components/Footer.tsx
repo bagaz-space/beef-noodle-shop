@@ -41,11 +41,8 @@ export function Footer() {
       </div>
 
       <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-        {/* --ink, not accent: the footer already carries heavy visual weight
-            and the brief wants the closing note calm — the same reason the
-            DiamondGrid below it stays untinted here. */}
         <div className="flex flex-col items-start justify-end gap-8">
-          <Character name="noodle-wrap" tone="var(--ink)" className="w-28 sm:w-40" />
+          <Character name="noodle-wrap" className="w-28 sm:w-40" />
           <DiamondGrid />
         </div>
 

@@ -24,6 +24,22 @@
   --line: rgba(43, 35, 32, 0.16);
 
   /*
+   * The red the client's character illustrations ship with, kept as-is at
+   * their request rather than repainted in `--accent`.
+   *
+   * It sits outside the brief's four-colour palette on purpose, so it gets a
+   * token of its own rather than being hardcoded in a component: colours live
+   * here and nowhere else (docs/03-konvensi.md). It is also the strongest
+   * colour on the page — 6.8:1 on `--ground` where `--accent` is 4.35:1 — so
+   * treat it as the characters' colour, not as a general-purpose one.
+   *
+   * Ten of the eleven files carry exactly this value; lounge.svg ships
+   * #a31e21. They're painted through a mask, so all eleven come out
+   * consistent here.
+   */
+  --character: #a50a0a;
+
+  /*
    * `--font-display-src` / `--font-body-src` are set by next/font in
    * app/layout.tsx (a class on <html>). Routing the semantic tokens below
    * through them — rather than binding next/font directly to

@@ -1,5 +1,19 @@
 import type { MenuSection } from "@/lib/content";
+import { Character, type CharacterName } from "./Character";
 import { MenuCarousel } from "./MenuCarousel";
+
+/*
+ * One character per category, keyed by position rather than by meaning.
+ *
+ * Deliberately not matched to the food: all eleven illustrations are cow,
+ * noodle and bowl, while the categories include Rice, Sides and Sweet &
+ * Drinks — so any "matching" beyond the first category would have been
+ * invented anyway. Per the client, they're decoration here, not labels.
+ *
+ * Keyed by index, not picked at random: a real random pick would differ
+ * between the server and client renders and break hydration.
+ */
+const CATEGORY_CHARACTERS: CharacterName[] = ["bowl", "chopsticks", "lounge", "wink"];
 
 /**
  * A category reads as a spread: the item list on the page's own cream ground,
@@ -37,12 +51,18 @@ export function MenuCategory({
           <p className="text-sm" style={{ color: "var(--ink-muted)" }}>
             {counter}
           </p>
-          <h3
-            className="mt-2 text-2xl font-black uppercase leading-tight tracking-tight sm:text-3xl"
-            style={{ color: "var(--ink)" }}
-          >
-            {section.name}
-          </h3>
+          <div className="mt-2 flex items-center gap-4">
+            <h3
+              className="text-2xl font-black uppercase leading-tight tracking-tight sm:text-3xl"
+              style={{ color: "var(--ink)" }}
+            >
+              {section.name}
+            </h3>
+            <Character
+              name={CATEGORY_CHARACTERS[(index - 1) % CATEGORY_CHARACTERS.length]}
+              className="w-18 shrink-0 sm:w-20"
+            />
+          </div>
           <p className="mt-1 text-sm" style={{ color: "var(--ink-muted)" }}>
             {section.chinese}
           </p>

@@ -56,10 +56,12 @@ Batas yang menjaga baris "mark-nya harus tenang dan bisa dipercaya" tetap benar:
 
 - Dekoratif sepenuhnya. `aria-hidden`, tidak pernah jadi satu-satunya pembawa
   informasi apa pun.
-- Kepadatan rendah. Empat penempatan di seluruh halaman.
+- Kepadatan rendah. Tujuh penempatan: Story, empat kategori menu,
+  Signature, Footer.
 - **Tidak pernah menggantikan mark.** Hero tetap milik `OutlineMark` 牛肉面馆
   sendirian; Heritage tetap milik foto keluarga asli klien.
-- Diwarnai token, tidak pernah warna bawaan filenya.
+- Memakai warna aslinya (`--character`), atas permintaan klien. Tetap lewat
+  token, bukan hex di komponen.
 - Tanpa animasi.
 
 Rinciannya di `docs/superpowers/specs/2026-08-18-karakter-ilustrasi-design.md`.
