@@ -2,10 +2,17 @@ import { story } from "@/lib/content";
 import { Photo } from "./Photo";
 
 /**
- * Mid-page photo band: the shop's opening era and lineage, flanked by the two
- * photos that carry it — the founding family on one side, the sourcing the
- * text names on the other. The DiamondGrid that used to close this row moved
- * out to make room for the second photo; it still appears in Hero and Footer.
+ * Mid-page band: the shop's opening era and lineage, flanked by the family
+ * photo on one side and the client's origin-story video on the other.
+ *
+ * The video replaced a sourcing photo (aussie-beef.jpg) that used to stand
+ * under the "Australian beef · soup bone · quality pork" line. That line is
+ * an unillustrated claim again as a result — worth a photo of its own if one
+ * ever arrives, but not worth keeping a stock-ish still over the client's own
+ * footage.
+ *
+ * The DiamondGrid that used to close this row moved out to make room for the
+ * third column; it still appears in Hero and Footer.
  */
 export function Heritage() {
   return (
@@ -39,15 +46,33 @@ export function Heritage() {
         </p>
       </div>
 
-      {/* Real photo from the client. Gives the sourcing line above it
-          something to stand on — until now "Australian beef · soup bone ·
-          quality pork" was an unillustrated claim. */}
-      <Photo
-        src="/menu/aussie-beef.jpg"
-        alt="Cuts of Australian beef being trimmed on a board, beside star anise and cinnamon"
-        rounded
-        className="h-[18rem] w-full sm:h-[22rem] lg:h-[24rem]"
-      />
+      {/*
+       * The client's origin-story video, in place of the sourcing photo that
+       * used to sit here. Shot vertical for social (720x1280) and played at
+       * its own 9:16 rather than cropped: a landscape crop would keep ~31% of
+       * the frame and cut through the subtitles burned into its lower third.
+       *
+       * Never autoplayed, and preload="none": the file is 6.3MB and plenty of
+       * people open this on mall wifi, so nothing but the poster loads until
+       * someone presses play. The poster is the video's own opening card, so
+       * the still frame already says what it is.
+       */}
+      <figure className="m-0">
+        <video
+          controls
+          preload="none"
+          playsInline
+          poster="/story/origin-story-poster.jpg"
+          aria-label={story.videoCaption}
+          className="aspect-[9/16] w-full rounded-lg object-cover"
+          style={{ background: "var(--ground-alt)" }}
+        >
+          <source src="/story/origin-story.mp4" type="video/mp4" />
+        </video>
+        <figcaption className="mt-3 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+          {story.videoCaption}
+        </figcaption>
+      </figure>
     </section>
   );
 }

@@ -42,7 +42,7 @@ export function Story() {
       {/* Three blocks: character, beats, photo. The chef used to sit above the
           eyebrow at the top of the section; down here it shares a row instead
           of floating alone over the headline. */}
-      <div className="mt-12 grid gap-8 border-t pt-8 lg:grid-cols-[9rem_1fr_14rem_20rem] lg:gap-12" style={{ borderColor: "var(--line)" }}>
+      <div className="mt-12 grid gap-8 border-t pt-8 lg:grid-cols-[9rem_1fr_24rem] lg:gap-12" style={{ borderColor: "var(--line)" }}>
         <Character name="chef" className="w-24 self-center sm:w-32 lg:w-full" />
 
         <div className="flex flex-col justify-center divide-y" style={{ borderColor: "var(--line)" }}>
@@ -57,35 +57,6 @@ export function Story() {
             </div>
           ))}
         </div>
-
-        {/*
-         * The client's origin-story video, shot vertical for social (720x1280).
-         * Played at its own 9:16 rather than cropped to fit a landscape slot:
-         * a 16:9 crop would keep only ~31% of the frame and cut straight
-         * through the subtitles burned into its lower third. This is also why
-         * it isn't the hero background — it runs 35s, carries its own text,
-         * and ends on a logo card, none of which a background loop can do.
-         *
-         * Not autoplayed and preload="none": the file is 6.3MB, and plenty of
-         * people open this on mall wifi. The poster is the video's own opening
-         * card, so the still frame already says what it is.
-         */}
-        <figure className="m-0">
-          <video
-            controls
-            preload="none"
-            playsInline
-            poster="/story/origin-story-poster.jpg"
-            aria-label={story.videoCaption}
-            className="aspect-[9/16] w-full rounded-lg object-cover"
-            style={{ background: "var(--ground-alt)" }}
-          >
-            <source src="/story/origin-story.mp4" type="video/mp4" />
-          </video>
-          <figcaption className="mt-3 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-            {story.videoCaption}
-          </figcaption>
-        </figure>
 
         {/* Real photo from the client, with its own caption — see
             konten-baru/foto/README.md for the full copy this is drawn from. */}
